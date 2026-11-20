@@ -1,0 +1,34 @@
+{
+"features":["Activity Assignments","Program Information","Preference Evaluation","Swim Level Validation","Duplicate Activity Check"],
+"visible":["Preferred Name","Last Name","Program","Cabin","Round 1","Round 2","Round 3","Duplicate Activities","Preference Score","Unrequested Activities","SwimColor","Aquatic Conflicts","Swim Lessons"],
+"all":["First Name","Preferred Name","Last Name","Enrolled Sessions/Programs","Program","Cabin","Round 1","Round 2","Round 3","Rounds Assigned","Duplicate Activities","Activity Preferences","Unfulfilled Preferences","Preference Score","Preference Percentile","Unrequested Activities","Preference by Round","SwimColor","Aquatic Conflicts","Swim Lessons","Camp Grade"],
+"campers":[
+{"First Name":"Theodore","Preferred Name":"Theo","Last Name":"Vance","Enrolled Sessions/Programs":"Session 1/Traditional Camp","Program":"Traditional Camp","Cabin":"Triangle","Round 1":"Swimming","Round 2":"Archery","Round 3":"Sports","Rounds Assigned":"3","Duplicate Activities":"","Activity Preferences":"Archery, Sports, Biking, Drama, Fishing, Dance, Skiing, Sailing, Climbing and Survivor","Unfulfilled Preferences":"Biking, Drama, Fishing, Dance, Skiing, Sailing, Climbing, Survivor","Preference Score":"100","Preference Percentile":"100","Unrequested Activities":" - ","Preference by Round":"—, 1, 2","SwimColor":"Blue","Aquatic Conflicts":" - ","Swim Lessons":"Assigned lessons","Camp Grade":"7th"}
+],
+"assertions":[
+{"filter":"Assignment Filter","applicable":false,"failures":0,"status":"","claim":""},
+{"filter":"Search","applicable":false,"failures":0,"status":"","claim":""},
+{"filter":"Programs Filter","applicable":true,"failures":0,"status":"satisfied","claim":"Checks that the rounds assigned are consistent for each program"},
+{"filter":"Preference Filter","applicable":true,"failures":0,"status":"satisfied","claim":"Checks that no camper is assigned an activity they didn't request"},
+{"filter":"Aquatic Conflicts","applicable":true,"failures":0,"status":"satisfied","claim":"Checks that campers are eligible for their water activities"},
+{"filter":"Swim Lessons","applicable":true,"failures":1,"status":"1 camper fails","claim":"Checks that swim lesson assignments match swim level"},
+{"filter":"Duplicate Activities","applicable":true,"failures":0,"status":"satisfied","claim":"Checks that no camper is assigned the same activity twice"},
+{"filter":"Activity Selector","applicable":false,"failures":0,"status":"","claim":""}
+],
+"report":[
+["Archery","0","1","0","1.00","—"],
+["Biking","0","0","0","—","3.00"],
+["Climbing","0","0","0","—","9.00"],
+["Dance","0","0","0","—","6.00"],
+["Drama","0","0","0","—","4.00"],
+["Fishing","0","0","0","—","5.00"],
+["Sailing","0","0","0","—","8.00"],
+["Skiing","0","0","0","—","7.00"],
+["Sports","0","0","1","2.00","—"],
+["Survivor","0","0","0","—","10.00"],
+["Swimming","1","0","0","—","—"]
+],
+"warnings":[
+
+]
+}

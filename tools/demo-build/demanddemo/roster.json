@@ -1,0 +1,38 @@
+{
+"features":["Activity Assignments","Program Information","Preference Evaluation","Swim Level Validation","Duplicate Activity Check"],
+"visible":["Preferred Name","Last Name","Program","Cabin","Round 1","Round 2","Round 3","Duplicate Activities","Preference Score","Unrequested Activities","SwimColor","Aquatic Conflicts","Swim Lessons"],
+"all":["First Name","Preferred Name","Last Name","Enrolled Sessions/Programs","Program","Cabin","Round 1","Round 2","Round 3","Rounds Assigned","Duplicate Activities","Activity Preferences","Unfulfilled Preferences","Preference Score","Preference Percentile","Unrequested Activities","Preference by Round","SwimColor","Aquatic Conflicts","Swim Lessons","Camp Grade"],
+"campers":[
+{"First Name":"Lily","Preferred Name":"Lily","Last Name":"Park","Enrolled Sessions/Programs":"Session 1/Traditional Camp","Program":"Traditional Camp","Cabin":"Triangle","Round 1":"Climbing","Round 2":"Archery","Round 3":"Drama","Rounds Assigned":"3","Duplicate Activities":"","Activity Preferences":"Climbing, Archery, Drama, Biking, Fishing, Sports, Skiing, Dance, Sailing and Survivor","Unfulfilled Preferences":"Biking, Fishing, Sports, Skiing, Dance, Sailing, Survivor","Preference Score":"100","Preference Percentile":"100","Unrequested Activities":" - ","Preference by Round":"1, 2, 3","SwimColor":"Blue","Aquatic Conflicts":" - ","Swim Lessons":" - ","Camp Grade":"6th"},
+{"First Name":"Maxwell","Preferred Name":"Max","Last Name":"Quill","Enrolled Sessions/Programs":"Session 1/Traditional Camp","Program":"Traditional Camp","Cabin":"Triangle","Round 1":"Archery","Round 2":"Climbing","Round 3":"Sports","Rounds Assigned":"3","Duplicate Activities":"","Activity Preferences":"Archery, Climbing, Sports, Biking, Fishing, Drama, Skiing, Dance, Sailing and Survivor","Unfulfilled Preferences":"Biking, Fishing, Drama, Skiing, Dance, Sailing, Survivor","Preference Score":"100","Preference Percentile":"100","Unrequested Activities":" - ","Preference by Round":"1, 2, 3","SwimColor":"Blue","Aquatic Conflicts":" - ","Swim Lessons":" - ","Camp Grade":"7th"},
+{"First Name":"Nora","Preferred Name":"Nora","Last Name":"Reyes","Enrolled Sessions/Programs":"Session 1/Traditional Camp","Program":"Traditional Camp","Cabin":"Triangle","Round 1":"Drama","Round 2":"Biking","Round 3":"Archery","Rounds Assigned":"3","Duplicate Activities":"","Activity Preferences":"Drama, Biking, Climbing, Archery, Fishing, Sports, Skiing, Dance, Sailing and Survivor","Unfulfilled Preferences":"Climbing, Fishing, Sports, Skiing, Dance, Sailing, Survivor","Preference Score":"96","Preference Percentile":"20","Unrequested Activities":" - ","Preference by Round":"1, 2, 4","SwimColor":"Blue","Aquatic Conflicts":" - ","Swim Lessons":" - ","Camp Grade":"6th"},
+{"First Name":"Paige","Preferred Name":"Paige","Last Name":"Tran","Enrolled Sessions/Programs":"Session 1/Traditional Camp","Program":"Traditional Camp","Cabin":"Triangle","Round 1":"Fishing","Round 2":"Dance","Round 3":"Sports","Rounds Assigned":"3","Duplicate Activities":"","Activity Preferences":"Fishing, Dance, Sports, Archery, Drama, Climbing, Skiing, Biking, Sailing and Survivor","Unfulfilled Preferences":"Archery, Drama, Climbing, Skiing, Biking, Sailing, Survivor","Preference Score":"100","Preference Percentile":"100","Unrequested Activities":" - ","Preference by Round":"1, 2, 3","SwimColor":"Blue","Aquatic Conflicts":" - ","Swim Lessons":" - ","Camp Grade":"7th"},
+{"First Name":"Rosa","Preferred Name":"Rosa","Last Name":"Vega","Enrolled Sessions/Programs":"Session 1/Traditional Camp","Program":"Traditional Camp","Cabin":"Triangle","Round 1":"Sports","Round 2":"Archery","Round 3":"Dance","Rounds Assigned":"3","Duplicate Activities":"","Activity Preferences":"Sports, Archery, Dance, Drama, Fishing, Biking, Skiing, Sailing, Survivor and Arts & Crafts","Unfulfilled Preferences":"Drama, Fishing, Biking, Skiing, Sailing, Survivor, Arts & Crafts","Preference Score":"100","Preference Percentile":"100","Unrequested Activities":" - ","Preference by Round":"1, 2, 3","SwimColor":"Blue","Aquatic Conflicts":" - ","Swim Lessons":" - ","Camp Grade":"6th"}
+],
+"assertions":[
+{"filter":"Assignment Filter","applicable":false,"failures":0,"status":"","claim":""},
+{"filter":"Search","applicable":false,"failures":0,"status":"","claim":""},
+{"filter":"Programs Filter","applicable":true,"failures":0,"status":"satisfied","claim":"Checks that the rounds assigned are consistent for each program"},
+{"filter":"Preference Filter","applicable":true,"failures":0,"status":"satisfied","claim":"Checks that no camper is assigned an activity they didn't request"},
+{"filter":"Aquatic Conflicts","applicable":true,"failures":0,"status":"satisfied","claim":"Checks that campers are eligible for their water activities"},
+{"filter":"Swim Lessons","applicable":true,"failures":0,"status":"satisfied","claim":"Checks that swim lesson assignments match swim level"},
+{"filter":"Duplicate Activities","applicable":true,"failures":0,"status":"satisfied","claim":"Checks that no camper is assigned the same activity twice"},
+{"filter":"Activity Selector","applicable":false,"failures":0,"status":"","claim":""}
+],
+"report":[
+["Archery","1","2","1","2.25","4.00"],
+["Arts & Crafts","0","0","0","—","10.00"],
+["Biking","0","1","0","2.00","5.50"],
+["Climbing","1","1","0","1.50","4.50"],
+["Dance","0","1","1","2.50","8.00"],
+["Drama","1","0","1","2.00","5.00"],
+["Fishing","1","0","0","1.00","5.00"],
+["Sailing","0","0","0","—","8.80"],
+["Skiing","0","0","0","—","7.00"],
+["Sports","1","0","2","2.33","6.00"],
+["Survivor","0","0","0","—","9.80"]
+],
+"warnings":[
+
+]
+}
