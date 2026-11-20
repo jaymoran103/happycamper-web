@@ -11,4 +11,6 @@ Builds the demo page from `template.html` and fictional rosters, then checks it.
 - `Programs <campers.csv> <activities.csv>` prints programs with their round groups.
 - `Demand <campers.csv> <activities.csv> <activity>` prints the demand sort order.
 
-`site/demo.html` is `out/index.html` with the shared site header applied.
+To refresh the site after a build, run `python3 -I tools/site/make-site.py` from the repo root. It writes `site/demo.html` from `out/index.html`, and `site/index.html` from the download draft, with the shared header, switcher and footer.
+
+The checks expect v12's left-aligned header. Run against `site/demo.html`, they report 3 alignment failures, because the site centers its header.
