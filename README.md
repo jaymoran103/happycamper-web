@@ -1,8 +1,8 @@
 # happycamper-web
 
-Plain web pages that explain HappyCamper to people who aren't developers. This repo is separate from the app's own repos.
+Plain web pages that explain HappyCamper to people who aren't developers. This repo is separate from the app's complete codebase.
 
-| Folder | Holds |
+| Folder | Content |
 | --- | --- |
 | `site/` | The static site: `index.html` (download) and `demo.html` (demo). Serve it as-is. |
 | `archive/` | Design rounds kept as a record. Open each round's `index.html` to see its lineage. |
@@ -12,9 +12,9 @@ Plain web pages that explain HappyCamper to people who aren't developers. This r
 
 - [happycamper-heart](https://github.com/jaymoran103/happycamper-heart): the 2026 distribution, v2.3 to v2.5
 - [happycamper-public](https://github.com/jaymoran103/happycamper-public): v2.2, used in 2025
-- [happycamper-v3](https://github.com/jaymoran103/happycamper-v3): the refactor in progress
-- [NameSwap](https://github.com/jaymoran103/NameSwap): the tool used to anonymize test data
-- [Current download page](https://jaymoran103.github.io/happycamper-heart/docs/)
+- [happycamper-v3](https://github.com/jaymoran103/happycamper-v3): an web-oriented refactor, designed throughtfully in spring 2026, shelved in favor of the more pragmatic happycamper-heart.
+- [NameSwap](https://github.com/jaymoran103/NameSwap): purpose-built tool for reliable, low frills name anonymization.
+- [Current download page](https://jaymoran103.github.io/happycamper-heart/docs/) - soon to be replaced with this more rounded trio of pages. As a frequently linked distribution point for camp staff, this will be continually updated to point toward the newest happycamper distribution point, which for the foreseeable future will be this repo's trio of pages, served statically,
 
 ## Wording decisions
 
