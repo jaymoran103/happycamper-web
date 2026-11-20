@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HappyCamper Demo</title>
+<meta name="description" content="A browser demo of HappyCamper, a workspace for checking camp activity schedules.">
+<link rel="icon" href="data:image/png;base64,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">
+<style>
+  :root {
+    color-scheme: light;
+    --accent: #1a672c; --accent-dark: #2f7340; --ink: #26302a; --soft: #43524a;
+    --paper: #cfe3c9; --card: #fff; --line: #b9d3b5; --tint: #eef5ea;
+    --even: rgb(230,230,230); --odd: rgb(205,205,205);
+    --flag-even: rgb(240,185,185); --flag-odd: rgb(215,160,160);
+    --sel-even: rgb(190,210,240); --sel-odd: rgb(165,185,215);
+    --pass: rgb(143,185,143); --fail: rgb(215,146,146);
+    --app-font: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { background: var(--paper); }
+  body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.6 Verdana, Geneva, sans-serif; }
+  a { color: var(--accent); }
+  :focus-visible { outline: 3px solid #2b68b8; outline-offset: 2px; }
+  .page { width: min(1160px, 100%); margin: 0 auto; padding: 3rem 1.25rem 2rem; }
+
+  .top { text-align: left; }
+  .top img { width: 110px; height: 110px; }
+  h1 { font-size: 2.4rem; line-height: 1.2; margin: 1rem 0 0; }
+  .headline { margin: .6rem 0 0; font-size: 1.2rem; line-height: 1.4; font-weight: 700; color: var(--accent); }
+  .intro { max-width: 44rem; margin: 1.5rem 0 0; text-align: left; }
+  .intro .dl { font-size: .9rem; font-weight: 700; }
+  .intro p { margin: 0 0 1rem; }
+
+  section { margin-top: 3rem; }
+  h2 { font-size: 1.45rem; line-height: 1.3; margin: 0 0 .45rem; }
+  .note { max-width: 50rem; margin: 0 0 1.1rem; font-size: .92rem; color: var(--soft); }
+
+  /* Simulated desktop window: etched frame style */
+  .app { position: relative; height: 660px; display: flex; flex-direction: column; overflow: hidden; background: #ececec; color: #000; border: 1px solid #7d7d7d; border-radius: 5px; font: 13px/1.3 var(--app-font); }
+  .titlebar { flex: none; position: relative; display: flex; align-items: center; height: 30px; padding: 0 12px; background: #e9e9ec; border-bottom: 1px solid #8b8b8b; }
+  .lights { display: flex; gap: 7px; }
+  .lights i { width: 11px; height: 11px; border-radius: 50%; background: #ee6a5f; }
+  .lights i:nth-child(2) { background: #f5bd4f; } .lights i:nth-child(3) { background: #61c454; }
+  .titlebar b { position: absolute; left: 0; right: 0; text-align: center; color: #555; pointer-events: none; }
+  .toolbar { flex: none; position: relative; display: flex; flex-wrap: wrap; justify-content: space-between; background: rgb(226,226,226); border-bottom: 1px solid #8b8b8b; box-shadow: 0 1px 0 #fff; }
+  .tools, .finders { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; padding: 7px 8px; }
+  .app button, .app select, .app input[type=search] { font: inherit; color: #000; }
+  .app button { padding: 3px 11px; border: 1px solid #858585; border-radius: 3px; background: #f4f4f4; box-shadow: inset 0 0 0 1px #fff; cursor: pointer; }
+  .app button:hover:not(:disabled) { background: rgb(190,210,240); }
+  .app button:active:not(:disabled) { background: #d6d6d6; box-shadow: none; }
+  .app button:disabled { color: #999; background: #e8e8e8; border-color: #b0b0b0; box-shadow: none; cursor: default; }
+  .app select { height: 24px; max-width: 124px; border: 1px solid #858585; border-radius: 2px; background-color: #fff; }
+  .app input[type=search] { width: 112px; height: 24px; padding: 0 7px; border: 1px solid #858585; border-radius: 2px; background: #fff; }
+
+  .welcome { flex: 1; display: grid; place-content: center; text-align: center; padding: 20px; }
+  .welcome h3 { font-size: 22px; margin: 0 0 8px; }
+  .welcome p { margin: 0; font-size: 15px; }
+  .workspace { flex: 1; min-height: 0; display: flex; }
+  .sidebar { position: relative; width: 262px; flex: none; overflow-y: auto; padding: 6px; background: rgb(220,220,220); }
+  .panel { margin-bottom: 6px; padding: 1px; overflow: hidden; border: 1px solid #858585; border-radius: 3px; background: rgb(215,215,215); box-shadow: inset 0 0 0 1px #f4f4f4; }
+  .panel:last-child { margin-bottom: 0; }
+  .app .panel-head { width: 100%; display: flex; align-items: center; gap: 8px; padding: 5px 8px; text-align: left; font-weight: 700; border: 0; border-radius: 0; background: rgb(200,200,200); box-shadow: none; }
+  .app .panel-head[aria-expanded=true] { border-bottom: 1px solid #929292; }
+  .app .panel-head:active:not(:disabled) { background: rgb(190,190,190); box-shadow: none; }
+  .caret { flex: none; width: 0; height: 0; margin: 0 2px; border-left: 6px solid #222; border-top: 4px solid transparent; border-bottom: 4px solid transparent; }
+  .panel-head[aria-expanded=true] .caret { transform: rotate(90deg); }
+  .panel-head .name { flex: 1; }
+  .badge { width: 38px; height: 20px; display: grid; place-items: center; font-size: 12px; font-weight: 700; border: 1px solid #666; border-radius: 2px; }
+  .badge.ok { background: var(--pass); } .badge.bad { background: var(--fail); }
+  .panel-body { padding: 7px 9px 8px; }
+  .claim { margin-bottom: 6px; padding: 4px 6px; border: 1px solid #a0a0a0; border-radius: 2px; font-size: 12px; color: rgb(45,45,45); }
+  .check { display: flex; gap: 6px; align-items: center; padding: 2px 0; cursor: pointer; }
+  .check input { margin: 0; accent-color: #2b68b8; }
+  .check.group { font-weight: 700; } .check.sub { margin-left: 15px; }
+  .roundpick { display: flex; align-items: center; gap: 6px; margin-bottom: 5px; }
+  .main { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 6px; padding: 6px; background: #ececec; }
+  .tablewrap { flex: 1; min-height: 0; overflow: auto; border: 1px solid #666; border-radius: 2px; background: #fff; }
+  table.roster, table.report { border-collapse: separate; border-spacing: 0; white-space: nowrap; min-width: 100%; }
+  .roster th, .report th { position: sticky; top: 0; z-index: 1; padding: 0; background: rgb(200,200,200); border-right: 1px solid #5f5f5f; border-bottom: 1px solid #5f5f5f; }
+  .app .roster th button, .app .report th button { width: 100%; padding: 4px 8px; font-size: 11px; font-weight: 600; white-space: nowrap; border: 0; border-radius: 0; background: none; box-shadow: none; }
+  .roster td, .report td { padding: 3px 7px; font-size: 12px; background: var(--even); border-right: 1px solid #5f5f5f; border-bottom: 1px solid #5f5f5f; }
+  .roster tr.alt td, .report tr.alt td { background: var(--odd); }
+  .roster td.flag { background: var(--flag-even); } .roster tr.alt td.flag { background: var(--flag-odd); }
+  .roster tr.sel td { background: var(--sel-even); } .roster tr.sel.alt td { background: var(--sel-odd); }
+  .roster tbody tr { cursor: pointer; }
+  .empty { padding: 28px; text-align: center; color: #555; }
+  .statusbar { flex: none; display: flex; align-items: center; gap: 10px; }
+
+  .veil { position: absolute; inset: 30px 0 0; z-index: 5; display: grid; place-items: center; padding: 14px; overflow: auto; background: rgba(60,60,60,.35); }
+  .dialog { width: min(100%, 470px); max-height: 100%; display: flex; flex-direction: column; overflow: hidden; border: 1px solid #666; border-radius: 5px; background: #ececec; }
+  .dialog.wide { width: min(100%, 680px); }
+  .dialog header { flex: none; padding: 7px; text-align: center; font-weight: 700; color: #444; background: #e9e9ec; border-bottom: 1px solid #8b8b8b; }
+  .dialog .body { display: grid; gap: 10px; padding: 12px; overflow: auto; }
+  .dialog footer { flex: none; display: flex; justify-content: space-between; gap: 8px; padding: 9px 12px; background: rgb(220,220,220); border-top: 1px solid #8b8b8b; }
+  .dialog fieldset { min-width: 0; margin: 0; padding: 8px 11px 9px; border: 1px solid #858585; border-radius: 3px; box-shadow: inset 0 0 0 1px #f7f7f7; }
+  .dialog legend { float: left; width: 100%; padding: 0 0 5px; font-weight: 700; }
+  .dialog legend + * { clear: both; }
+  .file { display: flex; align-items: center; gap: 8px; }
+  .file i { color: #2e7d32; font-style: normal; font-weight: 700; }
+  .columns { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 0 12px; }
+  .inline { display: flex; flex-wrap: wrap; gap: 7px; }
+  .report { width: 100%; } .report td:not(:first-child) { text-align: center; }
+  .dialog p { margin: 0; line-height: 1.45; }
+
+  /* Filter examples */
+  .examplehead { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .4rem 1rem; margin-bottom: .7rem; }
+  .examplehead h2 { margin: 0; }
+  .examplenav { display: flex; align-items: center; gap: .55rem; font-size: .85rem; font-weight: 700; color: var(--ink); }
+  .step { width: 2rem; height: 2rem; padding: 0; font: 700 1.05rem/1 Verdana, Geneva, sans-serif; color: var(--accent-dark); background: rgba(255,255,255,.6); border: 1px solid rgba(47,115,64,.4); border-radius: 6px; cursor: pointer; }
+  .step:hover { background: #fff; }
+  .app.frame { height: auto; }
+  .app .panel-head.strip { width: auto; flex: none; gap: 12px; padding: 6px 9px; border-bottom: 1px solid #8b8b8b; }
+  .strip .name { flex: none; }
+  .strip .stripclaim { flex: 1; min-width: 0; font-size: 12px; font-weight: 400; color: rgb(45,45,45); }
+  .frame .main { flex: none; }
+  .frame .tablewrap { flex: none; height: auto; overflow-x: auto; overflow-y: hidden; }
+  .frame .statusbar { min-height: 20px; }
+  .mini th { position: static; padding: 4px 6px; font-size: 11px; font-weight: 600; text-align: center; }
+  .roster.mini tbody tr { cursor: default; }
+  .roster.mini td { padding: 3px 6px; }
+  .roster.mini tr.first td { border-top: 2px solid #5f5f5f; }
+  .roster.mini tbody tr:first-child td { border-top: 0; }
+  .roster.mini th.notehead { background: #fff; font-family: Verdana, Geneva, sans-serif; text-align: left; padding-left: 9px; }
+  .roster.mini td.notecell { padding: 3px 9px; background: #fff; border-right: 0; border-left: 4px solid #999; font-family: Verdana, Geneva, sans-serif; font-size: 11px; color: var(--ink); }
+  .roster.mini td.notecell.ok { border-left-color: var(--pass); } .roster.mini td.notecell.bad { border-left-color: var(--fail); }
+  .frame ul { margin: 0; padding: 0; list-style: none; font-family: Verdana, Geneva, sans-serif; color: var(--ink); }
+  .frame li b { font-weight: 700; }
+  .mode-b .workspace { align-items: stretch; }
+  .mode-b .main { flex: 1; }
+  .mode-b .tablewrap { flex: 1; }
+  .notepanel { width: 240px; flex: none; padding: 6px; background: rgb(220,220,220); border-right: 1px solid #8b8b8b; }
+  .panelnotes li { margin-bottom: 6px; padding: 6px 8px; font-size: 11px; line-height: 1.4; background: #fff; border: 1px solid #858585; border-left: 4px solid #999; border-radius: 2px; }
+  .panelnotes li:last-child { margin-bottom: 0; }
+  .panelnotes li b { display: block; }
+  .notefoot { border: 1px solid #858585; border-radius: 2px; background: #fff; }
+  .notefoot li { padding: 4px 8px; font-size: 11px; line-height: 1.4; border-left: 4px solid #999; border-top: 1px solid #ddd; }
+  .notefoot li:first-child { border-top: 0; }
+  .panelnotes li.ok, .notefoot li.ok, .rownotes li.ok { border-left-color: var(--pass); }
+  .panelnotes li.bad, .notefoot li.bad, .rownotes li.bad { border-left-color: var(--fail); }
+  .rownotes { display: none; margin: .6rem 0 0; padding: 0; list-style: none; }
+  .rownotes li { margin-top: .3rem; padding: .35rem .6rem; font-size: .8rem; background: #fff; border-left: 4px solid #999; border-radius: 2px; }
+  @media (max-width: 1040px) {
+    .roster.mini td.notecell, .roster.mini th.notehead { display: none; }
+    .rownotes { display: block; }
+    .mode-b .workspace { flex-direction: column; }
+    .notepanel { width: 100%; border-right: 0; border-bottom: 1px solid #8b8b8b; }
+  }
+
+  footer { margin-top: 3rem; text-align: left; font-size: .85rem; color: var(--soft); }
+  footer div + div { margin-top: .3rem; }
+
+  @media (max-width: 820px) {
+    .page { padding: 2rem 1rem 1.5rem; }
+    h1 { font-size: 2rem; }
+    .app { height: auto; }
+    .welcome { min-height: 280px; }
+    .workspace { flex-direction: column; }
+    .sidebar { width: 100%; max-height: 250px; }
+    .tablewrap { height: 340px; flex: none; }
+    .finders { width: 100%; border-top: 1px solid #8b8b8b; }
+    .statusbar { align-items: flex-start; }
+    .veil { position: fixed; inset: 0; z-index: 20; }
+    .sheet { padding: 1rem; }
+    .frame .tablewrap { height: auto; }
+    .rows li { padding: .34rem .5rem; font-size: .76rem; }
+  }
+</style>
+</head>
+<body>
+<style>
+.proto-bar{position:relative;z-index:50;box-sizing:border-box;width:100%}
+.proto-bar{display:flex;flex-wrap:wrap;align-items:center;gap:.2rem .75rem;padding:6px 14px;background:#0f1016;color:#f4f2ee;font:12px/1.4 ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;text-align:left}
+.proto-bar b{font-weight:600}
+.proto-bar>span{color:#a5a6b0}
+.proto-bar nav{margin-left:auto;display:flex;gap:.6rem}
+.proto-bar nav a{color:#cdced6;text-decoration:none;border-bottom:1px solid #4a4b55}
+.proto-bar nav a.nav-ok{color:hsl(152 55% 70%);border-bottom-color:hsl(152 55% 40%)}
+.proto-bar nav a.nav-warn{color:hsl(38 92% 70%);border-bottom-color:hsl(38 92% 42%)}
+.proto-bar nav a.nav-bad{color:hsl(0 84% 76%);border-bottom-color:hsl(0 60% 42%)}
+.proto-bar nav a.nav-muted{color:#9a9ba6;border-bottom-color:#4a4b55}
+.proto-bar nav a[aria-current]{color:#f7f5f0;border-bottom-color:currentColor}
+</style>
+<div class="proto-bar" data-generated="build.mjs — edit round.json, not this">
+  <b>I · v7b Panel</b>
+  <span>Notes sit in a panel left of the table, and rows stay on one line.</span>
+  <nav>
+    <a href="../index.html">Lineage</a>
+    <a href="v1.html" title="v1 Guided tour — ruled out" class="nav-bad">A</a>
+    <a href="v2.html" title="v2 Plain page — superseded" class="nav-muted">B</a>
+    <a href="ui-drafts.html" title="UI drafts — superseded" class="nav-muted">C</a>
+    <a href="v3.html" title="v3 Etched UI — superseded" class="nav-muted">D</a>
+    <a href="v4.html" title="v4 Pass/fail — superseded" class="nav-muted">E</a>
+    <a href="v5.html" title="v5 Grouped — superseded" class="nav-muted">F</a>
+    <a href="v6.html" title="v6 Side notes — superseded" class="nav-muted">G</a>
+    <a href="v7a.html" title="v7a Row notes — parked" class="nav-warn">H</a>
+    <a href="v7b.html" aria-current="page" title="v7b Panel — superseded" class="nav-muted">I</a>
+    <a href="v7c.html" title="v7c Footer — parked" class="nav-warn">J</a>
+    <a href="v8.html" title="v8 Final — superseded" class="nav-muted">K</a>
+    <a href="v9.html" title="v9 New views — superseded" class="nav-muted">L</a>
+    <a href="v10.html" title="v10 Explained views — superseded" class="nav-muted">M</a>
+    <a href="v11.html" title="v11 Older mock-up — superseded" class="nav-muted">N</a>
+    <a href="v12.html" title="v12 Final — confirmed" class="nav-ok">O</a>
+  </nav>
+</div>
+
+<div class="page">
+  <header class="top">
+    <img src="data:image/png;base64,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" alt="HappyCamper logo">
+    <h1>HappyCamper</h1>
+    <p class="headline">Catch schedule problems before your campers do</p>
+  </header>
+
+  <main>
+    <div class="intro">
+      <p>Camp schedules balance complex constraints, and the final check falls to the busiest camp leaders on their busiest day of the session.</p>
+      <p>HappyCamper helps those leaders efficiently catch oversights the night before activities begin. With flexible configurations and purpose-built filters, leaders can quickly make sense of their data, and make informed revisions that prioritize camper satisfaction and rounded schedules.</p>
+      <a class="dl" href="https://jaymoran103.github.io/happycamper-heart/docs/">Downloads and sample rosters</a>
+    </div>
+
+    <section aria-labelledby="sampleHead">
+      <h2 id="sampleHead">Sample roster</h2>
+      <p class="note">This is a working copy of the data view with ten fictional campers. Open a filter in the sidebar, click a column header to sort, or use Column Visibility to bring more of the source data into view. Nothing here is uploaded.</p>
+      <div class="app" id="app">
+        <div class="titlebar"><span class="lights" aria-hidden="true"><i></i><i></i><i></i></span><b>HappyCamper 2.5.0</b></div>
+        <div class="toolbar">
+          <div class="tools">
+            <button id="tImport" type="button">Import</button><button id="tExport" type="button">Export</button><button id="tView" type="button">View Settings</button><button id="tCols" type="button">Column Visibility</button><button id="tReport" type="button">Activity Report</button><button id="tHelp" type="button">Help</button>
+          </div>
+          <div class="finders">
+            <span id="demandWrap"><label for="demand">Sort by demand: </label><select id="demand"></select></span>
+            <input id="search" type="search" placeholder="Search…" aria-label="Search roster">
+            <select id="scope" aria-label="Search scope"></select>
+          </div>
+        </div>
+        <div class="welcome" id="welcome"><div><h3>Welcome to HappyCamper 2.5.0</h3><p>Click 'Import' to get started, or click 'Help' for more instructions.</p></div></div>
+        <div class="workspace" id="workspace" hidden>
+          <aside class="sidebar" id="sidebar" aria-label="Filters"></aside>
+          <div class="main">
+            <div class="tablewrap" id="tablewrap"></div>
+            <div class="statusbar"><button id="reset" type="button">Reset Display</button><span id="status" role="status"></span></div>
+          </div>
+        </div>
+        <div id="dialogRoot"></div>
+      </div>
+    </section>
+
+    <section aria-labelledby="filterHead">
+      <div class="examplehead">
+        <h2 id="filterHead">Filter examples</h2>
+        <div class="examplenav" role="group" aria-label="Switch example">
+          <button class="step" id="prevExample" type="button" aria-label="Previous example">‹</button>
+          <span id="exampleCount" aria-live="polite"></span>
+          <button class="step" id="nextExample" type="button" aria-label="Next example">›</button>
+        </div>
+      </div>
+      <div id="filterPanel" role="region" aria-labelledby="filterHead"></div>
+    </section>
+  </main>
+
+  <footer>
+    <div>Created by <a href="https://github.com/jaymoran103">Jay Moran</a></div>
+    <div><a href="https://jaymoran103.github.io/happycamper-heart/docs/">Downloads and sample rosters</a></div>
+  </footer>
+</div>
+
+<script type="text/plain" id="csv-campers">"Last Name","First Name","Preferred Name","Camp Grade","Enrolled Sessions/Programs","Activity Preferences","SwimColor"
+"Adams","Andrew","Andy","6th","Session 1/Traditional Camp","Archery, Biking, Climbing, Drama, Fishing, Paddle Sports, Sports, Skiing, Survivor and Sailing","Blue"
+"Baker","Bobby","Bob","7th","Session 1/Traditional Camp","Biking, Friendship Bracelet, Fishing, Archery, Water Polo, Open Toed Shoes, Water Zumba, Paddle Sports, Dance and Arts & Crafts","Blue"
+"Cooper","Charles","Charlie","6th","Session 1/Traditional Camp","Survivor, Sports, Arts & Crafts, Archery, Skiing, Biking, Paddle Sports, Fishing, Friendship Bracelet and Open Toed Shoes","Blue"
+"Davis","Drew","Drew","7th","Session 1/Traditional Camp","Archery, Sports, Fishing, Water Polo, Skiing, Survivor, Sailing, Paddle Sports, Biking and Climbing","Blue"
+"Evans","Ethan","Ethan","6th","Session 1/Traditional Camp","Archery, Biking, Climbing, Drama, Fishing, Paddle Sports, Sports, Skiing, Survivor and Sailing","Blue"
+"Foster","Franklin","Frank","7th","Session 1/Traditional Camp","Archery, Biking, Climbing, Drama, Fishing, Paddle Sports, Sports, Skiing, Survivor and Sailing","Blue"
+"Garcia","Gabriel","Gabe","6th","Session 1/Traditional Camp","Archery, Biking, Climbing, Drama, Fishing, Paddle Sports, Sports, Skiing, Survivor and Sailing","White"
+"Harrison","Henry","Henry","7th","Session 1/Traditional Camp","Archery, Biking, Climbing, Drama, Fishing, Paddle Sports, Sports, Skiing, Survivor and Sailing","White"
+"Ingram","Isaac","Ike","6th","Session 1/Traditional Camp","Archery, Biking, Climbing, Drama, Fishing, Paddle Sports, Sports, Skiing, Survivor and Sailing","Red"
+"Johnson","Jeremy","Jeremy","7th","Session 1/Traditional Camp","Archery, Biking, Climbing, Drama, Fishing, Paddle Sports, Sports, Skiing, Survivor and Sailing","Red"</script>
+<script type="text/plain" id="csv-activities">"Location" ,"Activity"         ,"Day"  ,"Period" ,"Camper"          ,"Last Name" ,"First Name" ,"Preferred Name" ,"Session"   ,"Grade" ,"Division" ,"Cabin"    ,"Level"
+"Camp"     ,"Archery"          ,"S1W1" ,"1"      ,"Adams, Andy"     ,"Adams"     ,"Andrew"     ,"Andy"           ,"Session 1" ,"6th"   ,"All Camp" ,"Triangle" ,""
+"Camp"     ,"Arts & Crafts"    ,"S1W1" ,"2"      ,"Adams, Andy"     ,"Adams"     ,"Andrew"     ,"Andy"           ,"Session 1" ,"6th"   ,"All Camp" ,"Triangle" ,""
+"Camp"     ,"Paddle Sports"    ,"S1W1" ,"3"      ,"Adams, Andy"     ,"Adams"     ,"Andrew"     ,"Andy"           ,"Session 1" ,"6th"   ,"All Camp" ,"Triangle" ,""
+"Camp"     ,"Gold Swimming"    ,"S1W1" ,"1"      ,"Baker, Bob"      ,"Baker"     ,"Bobby"      ,"Bob"            ,"Session 1" ,"7th"   ,"All Camp" ,"Triangle" ,""
+"Camp"     ,"Dance"            ,"S1W1" ,"2"      ,"Baker, Bob"      ,"Baker"     ,"Bobby"      ,"Bob"            ,"Session 1" ,"7th"   ,"All Camp" ,"Triangle" ,""
+"Camp"     ,"Fishing"          ,"S1W1" ,"3"      ,"Baker, Bob"      ,"Baker"     ,"Bobby"      ,"Bob"            ,"Session 1" ,"7th"   ,"All Camp" ,"Triangle" ,""
+"Camp"     ,"Arts & Crafts"    ,"S1W1" ,"1"      ,"Cooper, Charlie" ,"Cooper"    ,"Charles"    ,"Charlie"        ,"Session 1" ,"6th"   ,"All Camp" ,"Triangle" ,""
+"Camp"     ,"Drama"            ,"S1W1" ,"2"      ,"Cooper, Charlie" ,"Cooper"    ,"Charles"    ,"Charlie"        ,"Session 1" ,"6th"   ,"All Camp" ,"Triangle" ,""
+"Camp"     ,"Sailing"          ,"S1W1" ,"3"      ,"Cooper, Charlie" ,"Cooper"    ,"Charles"    ,"Charlie"        ,"Session 1" ,"6th"   ,"All Camp" ,"Triangle" ,""
+"Camp"     ,"Sports"           ,"S1W1" ,"1"      ,"Davis, Drew"     ,"Davis"     ,"Drew"       ,"Drew"           ,"Session 1" ,"7th"   ,"All Camp" ,"Triangle" ,""
+"Camp"     ,"Horseback Riding" ,"S1W1" ,"2"      ,"Davis, Drew"     ,"Davis"     ,"Drew"       ,"Drew"           ,"Session 1" ,"7th"   ,"All Camp" ,"Triangle" ,""
+"Camp"     ,"Skiing"           ,"S1W1" ,"3"      ,"Davis, Drew"     ,"Davis"     ,"Drew"       ,"Drew"           ,"Session 1" ,"7th"   ,"All Camp" ,"Triangle" ,""
+"Camp"     ,"Archery"          ,"S1W1" ,"1"      ,"Evans, Ethan"    ,"Evans"     ,"Ethan"      ,"Ethan"          ,"Session 1" ,"6th"   ,"All Camp" ,"Triangle" ,""
+"Camp"     ,"Drama"            ,"S1W1" ,"2"      ,"Evans, Ethan"    ,"Evans"     ,"Ethan"      ,"Ethan"          ,"Session 1" ,"6th"   ,"All Camp" ,"Triangle" ,""
+"Camp"     ,"Fishing"          ,"S1W1" ,"3"      ,"Evans, Ethan"    ,"Evans"     ,"Ethan"      ,"Ethan"          ,"Session 1" ,"6th"   ,"All Camp" ,"Triangle" ,""
+"Camp"     ,"Horseback Riding" ,"S1W1" ,"1"      ,"Foster, Frank"   ,"Foster"    ,"Franklin"   ,"Frank"          ,"Session 1" ,"7th"   ,"All Camp" ,"Triangle" ,""
+"Camp"     ,"Sailing"          ,"S1W1" ,"2"      ,"Foster, Frank"   ,"Foster"    ,"Franklin"   ,"Frank"          ,"Session 1" ,"7th"   ,"All Camp" ,"Triangle" ,""
+"Camp"     ,"Paddle Sports"    ,"S1W1" ,"3"      ,"Foster, Frank"   ,"Foster"    ,"Franklin"   ,"Frank"          ,"Session 1" ,"7th"   ,"All Camp" ,"Triangle" ,""
+"Camp"     ,"Drama"            ,"S1W1" ,"1"      ,"Garcia, Gabe"    ,"Garcia"    ,"Gabriel"    ,"Gabe"           ,"Session 1" ,"6th"   ,"All Camp" ,"Triangle" ,""
+"Camp"     ,"Skiing"           ,"S1W1" ,"2"      ,"Garcia, Gabe"    ,"Garcia"    ,"Gabriel"    ,"Gabe"           ,"Session 1" ,"6th"   ,"All Camp" ,"Triangle" ,""
+"Camp"     ,"Arts & Crafts"    ,"S1W1" ,"3"      ,"Garcia, Gabe"    ,"Garcia"    ,"Gabriel"    ,"Gabe"           ,"Session 1" ,"6th"   ,"All Camp" ,"Triangle" ,""
+"Camp"     ,"Sports"           ,"S1W1" ,"1"      ,"Harrison, Henry" ,"Harrison"  ,"Henry"      ,"Henry"          ,"Session 1" ,"7th"   ,"All Camp" ,"Triangle" ,""
+"Camp"     ,"Dance"            ,"S1W1" ,"3"      ,"Harrison, Henry" ,"Harrison"  ,"Henry"      ,"Henry"          ,"Session 1" ,"7th"   ,"All Camp" ,"Triangle" ,""
+"Camp"     ,"Paddle Sports"    ,"S1W1" ,"1"      ,"Ingram, Ike"     ,"Ingram"    ,"Isaac"      ,"Ike"            ,"Session 1" ,"6th"   ,"All Camp" ,"Triangle" ,""
+"Camp"     ,"Sailing"          ,"S1W1" ,"2"      ,"Ingram, Ike"     ,"Ingram"    ,"Isaac"      ,"Ike"            ,"Session 1" ,"6th"   ,"All Camp" ,"Triangle" ,""
+"Camp"     ,"Skiing"           ,"S1W1" ,"3"      ,"Ingram, Ike"     ,"Ingram"    ,"Isaac"      ,"Ike"            ,"Session 1" ,"6th"   ,"All Camp" ,"Triangle" ,""
+"Camp"     ,"Fishing"          ,"S1W1" ,"1"      ,"Johnson, Jeremy" ,"Johnson"   ,"Jeremy"     ,"Jeremy"         ,"Session 1" ,"7th"   ,"All Camp" ,"Triangle" ,""
+"Camp"     ,"Sports"           ,"S1W1" ,"2"      ,"Johnson, Jeremy" ,"Johnson"   ,"Jeremy"     ,"Jeremy"         ,"Session 1" ,"7th"   ,"All Camp" ,"Triangle" ,""
+"Camp"     ,"Gold Swimming"    ,"S1W1" ,"3"      ,"Johnson, Jeremy" ,"Johnson"   ,"Jeremy"     ,"Jeremy"         ,"Session 1" ,"7th"   ,"All Camp" ,"Triangle" ,""</script>
+<script>
+(function () {
+  'use strict';
+  var $ = function (id) { return document.getElementById(id); };
+  var EMPTY = ' - ', NO_DATA = 'No Data', ROUNDS = ['Round 1', 'Round 2', 'Round 3'];
+  var EXEMPT = ['Swimming', 'Horseback Riding'];
+  var LEVELS = { Blue: 2, White: 1, Red: 0 };
+  var SWIM_REQ = { Sailing: 1, Paddlesports: 1, 'Paddle Sports': 1, Skiing: 1, Waterskiing: 1, 'Gold Swimming': 2, Mermaids: 1 };
+  var FEATURES = [['program', 'Program Information'], ['preference', 'Preference Evaluation'], ['swim', 'Swim Level Validation'], ['duplicate', 'Duplicate Activity Check']];
+  var COLUMNS = [['First Name', 0], ['Preferred Name', 1], ['Last Name', 1], ['Enrolled Sessions/Programs', 0], ['Program', 1, 'program'], ['Cabin', 1], ['Round 1', 1], ['Round 2', 1], ['Round 3', 1], ['Rounds Assigned', 0], ['Duplicate Activities', 1, 'duplicate'], ['Activity Preferences', 0], ['Unfulfilled Preferences', 0, 'preference'], ['Preference Score', 1, 'preference'], ['Preference Percentile', 0, 'preference'], ['Unrequested Activities', 1, 'preference'], ['Preference by Round', 0, 'preference'], ['SwimColor', 1], ['Aquatic Conflicts', 1, 'swim'], ['Swim Lessons', 1, 'swim'], ['Camp Grade', 0]];
+  var PROBLEM = ['Unrequested Activities', 'Aquatic Conflicts', 'Swim Lessons', 'Duplicate Activities'];
+  var NUMERIC = ['Camp Grade', 'Preference Score', 'Preference Percentile'];
+  var CLAIMS = {
+    program: 'Checks that the rounds assigned are consistent for each program',
+    pref: "Checks that no camper is assigned an activity they didn't request",
+    swim: 'Checks that campers are eligible for their water activities',
+    lesson: 'Checks that swim lesson assignments match swim level',
+    dup: 'Checks that no camper is assigned the same activity twice'
+  };
+
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+  function isEmpty(v) { return v == null || v === NO_DATA || v === EMPTY || v.trim() === ''; }
+
+  function parseCSV(text) {
+    var rows = [], row = [], i = 0, n = text.length;
+    while (i < n) {
+      while (text[i] === ' ') i++;
+      var cell = '';
+      if (text[i] === '"') {
+        i++;
+        while (i < n && !(text[i] === '"' && text[i + 1] !== '"')) { if (text[i] === '"') i++; cell += text[i++]; }
+        i++;
+        while (text[i] === ' ') i++;
+      } else {
+        while (i < n && text[i] !== ',' && text[i] !== '\n' && text[i] !== '\r') cell += text[i++];
+        cell = cell.trim();
+      }
+      row.push(cell);
+      if (text[i] === ',') { i++; continue; }
+      while (text[i] === '\r' || text[i] === '\n') i++;
+      if (row.length > 1 || row[0]) rows.push(row);
+      row = [];
+    }
+    var head = rows.shift();
+    return rows.map(function (r) { var o = {}; head.forEach(function (h, k) { o[h] = r[k]; }); return o; });
+  }
+
+  function parsePrefs(field) {
+    var list = field.split(',').map(function (s) { return s.trim(); });
+    var last = list.pop();
+    return list.concat(last.split(' and ').map(function (s) { return s.trim(); }));
+  }
+  function isExempt(a) { return isEmpty(a) || EXEMPT.indexOf(a) >= 0; }
+  function javaFixed(x, d) { var p = Math.pow(10, d); return (Math.round((x + 1e-10) * p) / p).toFixed(d); }
+
+  /* Mirrors the HappyCamper 2.5 feature pipeline for the sample rosters. */
+  function buildRoster(on) {
+    var campers = parseCSV($('csv-campers').textContent.trim()), byId = {};
+    campers.forEach(function (c) { c.id = c['Last Name'] + '|' + c['First Name']; byId[c.id] = c; });
+    parseCSV($('csv-activities').textContent.trim()).forEach(function (a) {
+      var c = byId[a['Last Name'] + '|' + a['First Name']]; if (!c) return;
+      c.Cabin = c.Cabin || a.Cabin;
+      var key = 'Round ' + a.Period; if (!c[key]) c[key] = a.Activity;
+    });
+    campers.forEach(function (c) {
+      c.rounds = ROUNDS.map(function (r) { return c[r] == null ? null : c[r]; });
+      c['Rounds Assigned'] = String(c.rounds.filter(function (a) { return !isEmpty(a); }).length);
+    });
+    if (on.program) campers.forEach(function (c) { c.Program = c['Enrolled Sessions/Programs'].split('/')[1].trim(); });
+    if (on.preference) {
+      campers.forEach(function (c) {
+        var prefs = parsePrefs(c['Activity Preferences']);
+        var pts = c.rounds.map(function (a) { var i = prefs.indexOf(a); return isExempt(a) || i < 0 ? 0 : 10 - i; });
+        var count = +c['Rounds Assigned'], scored = 0;
+        for (var i = 0; i < count; i++) if (!isExempt(c.rounds[i])) scored++;
+        var max = [0, 10, 19, 27][scored], total = pts.reduce(function (a, b) { return a + b; }, 0);
+        c.raw = max > 0 ? total / max : 1;
+        c.pref = { prefs: prefs, pts: pts, max: max, total: total };
+        var un = c.rounds.filter(function (a) { return !isEmpty(a) && prefs.indexOf(a) < 0 && EXEMPT.indexOf(a) < 0; });
+        var unf = prefs.filter(function (p) { return c.rounds.indexOf(p) < 0 && EXEMPT.indexOf(p) < 0; });
+        c['Unrequested Activities'] = un.join(', ') || EMPTY;
+        c['Unfulfilled Preferences'] = unf.join(', ') || EMPTY;
+        c['Preference by Round'] = pts.map(function (p) { return p > 0 ? String(11 - p) : '—'; }).join(', ');
+        c['Preference Score'] = String(Math.round(c.raw * 100));
+      });
+      campers.forEach(function (c) {
+        var rank = campers.filter(function (o) { return o.raw <= c.raw; }).length;
+        c['Preference Percentile'] = String(Math.round(rank / campers.length * 100));
+      });
+    }
+    if (on.swim) campers.forEach(function (c) {
+      var level = LEVELS[c.SwimColor];
+      var bad = c.rounds.filter(function (a) { return !isEmpty(a) && (SWIM_REQ[a] || 0) > level; });
+      var lessons = c.rounds.indexOf('Swimming') >= 0;
+      c['Aquatic Conflicts'] = bad.join(', ') || EMPTY;
+      c['Swim Lessons'] = level === 0 && !lessons ? 'Missing lessons' : level !== 0 && lessons ? 'Assigned lessons' : EMPTY;
+    });
+    if (on.duplicate) campers.forEach(function (c) {
+      var seen = {}, dupes = [];
+      c.rounds.forEach(function (a) { if (isEmpty(a)) return; if (seen[a] && dupes.indexOf(a) < 0) dupes.push(a); seen[a] = 1; });
+      c['Duplicate Activities'] = dupes.join(', ');
+    });
+    return campers;
+  }
+
+  function allOn() { var o = {}; FEATURES.forEach(function (f) { o[f[0]] = true; }); return o; }
+  function catalog(list) {
+    var s = {};
+    list.forEach(function (c) { parsePrefs(c['Activity Preferences']).concat(c.rounds).forEach(function (a) { if (!isEmpty(a)) s[a] = 1; }); });
+    return Object.keys(s).sort();
+  }
+  function programGroups(list) {
+    var seen = {};
+    list.forEach(function (c) { var n = +c['Rounds Assigned']; seen[c.Program] = seen[c.Program] === undefined || seen[c.Program] === n ? n : -1; });
+    return seen;
+  }
+  function flagged(list, col) { return list.filter(function (c) { return !isEmpty(c[col]); }); }
+  function assertions(list, on) {
+    var a = {};
+    if (on.program) { var g = programGroups(list); a.program = Object.keys(g).filter(function (p) { return g[p] === -1; }).length; }
+    if (on.preference) a.pref = flagged(list, 'Unrequested Activities').length;
+    if (on.swim) { a.swim = flagged(list, 'Aquatic Conflicts').length; a.lesson = flagged(list, 'Swim Lessons').length; }
+    if (on.duplicate) a.dup = flagged(list, 'Duplicate Activities').length;
+    return a;
+  }
+  function reportRows(list) {
+    return catalog(list).map(function (name) {
+      var r = [0, 0, 0], inn = [], out = [];
+      list.forEach(function (c) {
+        c.rounds.forEach(function (a, i) { if (a === name) r[i]++; });
+        var rank = parsePrefs(c['Activity Preferences']).indexOf(name);
+        if (rank >= 0) (c.rounds.indexOf(name) >= 0 ? inn : out).push(rank + 1);
+      });
+      function avg(x) { return x.length ? javaFixed(x.reduce(function (a, b) { return a + b; }, 0) / x.length, 2) : '—'; }
+      return [name, r[0], r[1], r[2], avg(inn), avg(out)];
+    });
+  }
+  function demandRank(c, activity) { var i = parsePrefs(c['Activity Preferences']).indexOf(activity); return i < 0 ? Infinity : i + 1; }
+  function fullName(c) { return c['Preferred Name'] + ' ' + c['Last Name']; }
+
+  var SAMPLE = buildRoster(allOn());
+  var S = { features: allOn(), roster: null, view: { placeholder: false, contrast: true, highlight: true }, dialog: null, collapsed: {}, reportSort: null };
+
+  function resetDisplay() {
+    S.f = { rounds: [true, true, true, true], programs: {}, pref: [true, true], swim: [true, true], lesson: [true, true], dup: [true, true], acts: {}, round: 0 };
+    S.search = ''; S.scope = 'All Columns'; S.demand = 'None'; S.sort = null; S.selected = null;
+    S.collapsed = { assign: true, program: true, pref: true, swim: true, lesson: true, dup: true, activity: true };
+    $('search').value = '';
+  }
+  function columnsAvailable() { return COLUMNS.filter(function (c) { return !c[2] || S.features[c[2]]; }).map(function (c) { return c[0]; }); }
+  function standardVisible() { var v = {}; COLUMNS.forEach(function (c) { if (c[1] && (!c[2] || S.features[c[2]])) v[c[0]] = true; }); return v; }
+  function visibleColumns() { return columnsAvailable().filter(function (c) { return S.visible[c]; }); }
+  function doImport() { S.roster = buildRoster(S.features); S.visible = standardVisible(); S.dialog = null; resetDisplay(); }
+
+  function okFlag(v, pair) { return isEmpty(v) ? pair[0] : pair[1]; }
+  function passes(c) {
+    var f = S.f, on = S.features;
+    if (!f.rounds[+c['Rounds Assigned']]) return false;
+    if (S.search.trim()) {
+      var fields = S.scope === 'All Columns' ? visibleColumns() : S.scope === 'All Names' ? ['First Name', 'Preferred Name', 'Last Name'] : S.scope === 'Assigned Activities' ? ROUNDS : [S.scope];
+      var needle = S.search.trim().toLowerCase();
+      if (!fields.some(function (h) { return c[h] != null && c[h].toLowerCase().indexOf(needle) >= 0; })) return false;
+    }
+    if (on.program && f.programs[c.Program] === false) return false;
+    if (on.preference && !okFlag(c['Unrequested Activities'], f.pref)) return false;
+    if (on.swim && (!okFlag(c['Aquatic Conflicts'], f.swim) || !okFlag(c['Swim Lessons'], f.lesson))) return false;
+    if (on.duplicate && !okFlag(c['Duplicate Activities'], f.dup)) return false;
+    var acts = Object.keys(f.acts);
+    if (acts.length) {
+      var pool = f.round ? [c.rounds[f.round - 1]] : c.rounds;
+      if (!pool.some(function (a) { return f.acts[a]; })) return false;
+    }
+    return true;
+  }
+  function viewRows() {
+    var rows = S.roster.filter(passes);
+    if (S.demand !== 'None') rows = rows.map(function (c, i) { return [c, i]; }).sort(function (a, b) { var x = demandRank(a[0], S.demand), y = demandRank(b[0], S.demand); return x === y ? a[1] - b[1] : x < y ? -1 : 1; }).map(function (p) { return p[0]; });
+    if (S.sort) {
+      var col = S.sort.col, dir = S.sort.dir, num = NUMERIC.indexOf(col) >= 0;
+      rows = rows.map(function (c, i) { return [c, i]; }).sort(function (a, b) {
+        var x = a[0][col], y = b[0][col], r;
+        if (isEmpty(x) || isEmpty(y)) r = isEmpty(x) === isEmpty(y) ? 0 : isEmpty(x) ? -1 : 1;
+        else r = num ? parseFloat(x) - parseFloat(y) : x.localeCompare(y);
+        return r * dir || a[1] - b[1];
+      }).map(function (p) { return p[0]; });
+    }
+    return rows;
+  }
+  function display(v) { return isEmpty(v) ? (S.view.placeholder ? NO_DATA : EMPTY) : v; }
+  function isFlag(col, v) { return S.view.highlight && ((PROBLEM.indexOf(col) >= 0) !== isEmpty(v)); }
+
+  function check(key, label, on, cls) { return '<label class="check ' + (cls || '') + '"><input type="checkbox" data-f="' + esc(key) + '"' + (on ? ' checked' : '') + '>' + esc(label) + '</label>'; }
+  function panel(id, title, count, claim, body) {
+    var open = !S.collapsed[id], badge = '';
+    if (count !== undefined) {
+      var unit = id === 'program' ? 'program' : 'camper', tip = claim + ': ' + (count ? count + ' ' + unit + (count === 1 ? ' fails' : 's fail') : 'satisfied');
+      badge = '<span class="badge ' + (count ? 'bad' : 'ok') + '" title="' + esc(tip) + '" aria-label="' + esc(tip) + '">' + (count || '✓') + '</span>';
+    }
+    return '<div class="panel" id="panel-' + id + '"><button type="button" class="panel-head" data-panel="' + id + '" aria-expanded="' + open + '"><span class="caret" aria-hidden="true"></span><span class="name">' + esc(title) + '</span>' + badge + '</button>' +
+      (open ? '<div class="panel-body">' + (claim ? '<div class="claim">' + esc(claim) + '</div>' : '') + body + '</div>' : '') + '</div>';
+  }
+  function renderSidebar() {
+    var active = document.activeElement && document.activeElement.getAttribute ? (document.activeElement.getAttribute('data-f') || document.activeElement.getAttribute('data-panel')) : null;
+    var f = S.f, on = S.features, a = assertions(S.roster, on), h = '';
+    h += panel('assign', 'Assignment Filter', undefined, '', [0, 1, 2, 3].map(function (n) { return check('rounds:' + n, 'Campers with ' + n + ' activit' + (n === 1 ? 'y' : 'ies'), f.rounds[n]); }).join(''));
+    if (on.program) {
+      var g = programGroups(S.roster), groups = {};
+      Object.keys(g).sort().forEach(function (p) { (groups[g[p]] = groups[g[p]] || []).push(p); });
+      var body = [-1, 3, 2, 1, 0].filter(function (k) { return groups[k]; }).map(function (k) {
+        var name = k === -1 ? 'Mixed Rounds' : k === 0 ? 'No Rounds' : k === 1 ? '1 Round' : k + ' Rounds';
+        var any = groups[k].some(function (p) { return f.programs[p] !== false; });
+        return check('group:' + k, name, any, 'group') + groups[k].map(function (p) { return check('prog:' + p, p, f.programs[p] !== false, 'sub'); }).join('');
+      }).join('');
+      h += panel('program', 'Programs Filter', a.program, CLAIMS.program, body);
+    }
+    function pair(id, title, key, count, claim, l0, l1) { return panel(id, title, count, claim, check(key + ':0', l0, f[key][0]) + check(key + ':1', l1, f[key][1])); }
+    if (on.preference) h += pair('pref', 'Preference Filter', 'pref', a.pref, CLAIMS.pref, 'Assignments match requests', 'Unrequested assignments');
+    if (on.swim) { h += pair('swim', 'Aquatic Conflicts', 'swim', a.swim, CLAIMS.swim, 'Valid swim level', 'Invalid swim level'); h += pair('lesson', 'Swim Lessons', 'lesson', a.lesson, CLAIMS.lesson, 'Swim lessons valid', 'Swim lessons mismatch'); }
+    if (on.duplicate) h += pair('dup', 'Duplicate Activities', 'dup', a.dup, CLAIMS.dup, 'No duplicates', 'Has duplicates');
+    var opts = ['Any', 'R1', 'R2', 'R3'].map(function (r, i) { return '<option value="' + i + '"' + (f.round === i ? ' selected' : '') + '>' + r + '</option>'; }).join('');
+    h += panel('activity', 'Activity Selector', undefined, '', '<div class="roundpick"><label for="roundScope">Round:</label><select id="roundScope" data-f="round">' + opts + '</select></div>' + catalog(S.roster).map(function (x) { return check('act:' + x, x, !!f.acts[x]); }).join(''));
+    var top = $('sidebar').scrollTop;
+    $('sidebar').innerHTML = h; $('sidebar').scrollTop = top;
+    if (active) { var el = Array.prototype.find.call($('sidebar').querySelectorAll('[data-f],[data-panel]'), function (e) { return (e.getAttribute('data-f') || e.getAttribute('data-panel')) === active; }); if (el) el.focus({ preventScroll: true }); }
+  }
+  function renderTable() {
+    var cols = visibleColumns(), rows = viewRows(), x = $('tablewrap').scrollLeft, y = $('tablewrap').scrollTop;
+    if (!cols.length) { $('tablewrap').innerHTML = '<div class="empty">All columns are hidden. Use Column Visibility to show some.</div>'; }
+    else {
+      var head = cols.map(function (c) {
+        var s = S.sort && S.sort.col === c ? S.sort.dir : 0;
+        return '<th scope="col" aria-sort="' + (s > 0 ? 'ascending' : s < 0 ? 'descending' : 'none') + '"><button type="button" data-sort="' + esc(c) + '">' + esc(c) + (s > 0 ? ' ▲' : s < 0 ? ' ▼' : '') + '</button></th>';
+      }).join('');
+      var body = rows.map(function (r, i) {
+        var cls = (S.view.contrast && i % 2 ? 'alt ' : '') + (S.selected === r.id ? 'sel' : '');
+        return '<tr class="' + cls + '" data-id="' + esc(r.id) + '" tabindex="0" aria-selected="' + (S.selected === r.id) + '">' + cols.map(function (c) { return '<td class="' + (isFlag(c, r[c]) ? 'flag' : '') + '">' + esc(display(r[c])) + '</td>'; }).join('') + '</tr>';
+      }).join('');
+      $('tablewrap').innerHTML = '<table class="roster"><thead><tr>' + head + '</tr></thead><tbody>' + body + '</tbody></table>' + (rows.length ? '' : '<div class="empty">No campers match these filters.</div>');
+    }
+    $('tablewrap').scrollLeft = x; $('tablewrap').scrollTop = y;
+    var s = 'Showing ' + rows.length + ' of ' + S.roster.length + ' campers';
+    if (S.selected) s += ' · 1 selected';
+    if (S.search.trim()) s += ' · Search: "' + S.search.trim() + '" in ' + S.scope;
+    var acts = Object.keys(S.f.acts);
+    if (acts.length) s += ' · Activity: ' + acts.join(' or ') + (S.f.round ? ' (Round ' + S.f.round + ')' : '');
+    if (S.demand !== 'None') s += ' · Sorted by: demand for ' + S.demand;
+    $('status').textContent = s;
+  }
+  function setOptions(sel, items, value) { sel.innerHTML = items.map(function (i) { return '<option' + (i === value ? ' selected' : '') + '>' + esc(i) + '</option>'; }).join(''); }
+  function radio(name, title, a, b, first) { return '<fieldset><legend>' + esc(title) + '</legend><label class="check"><input type="radio" name="' + name + '" value="1"' + (first ? ' checked' : '') + '>' + esc(a) + '</label><label class="check"><input type="radio" name="' + name + '" value="0"' + (first ? '' : ' checked') + '>' + esc(b) + '</label></fieldset>'; }
+  function dialogShell(title, body, foot, wide) { return '<div class="veil"><div class="dialog' + (wide ? ' wide' : '') + '" role="dialog" aria-modal="true" aria-label="' + esc(title) + '"><header>' + esc(title) + '</header><div class="body">' + body + '</div><footer>' + foot + '</footer></div></div>'; }
+  function renderDialog() {
+    var d = S.dialog, h = '';
+    if (d === 'import') {
+      h = dialogShell('Import Roster', '<fieldset><legend>Camper File</legend><div class="file"><button type="button" disabled>Browse</button><span>demo_campers.csv</span><i aria-label="selected">✓</i></div></fieldset><fieldset><legend>Activity File</legend><div class="file"><button type="button" disabled>Browse</button><span>demo_activities.csv</span><i aria-label="selected">✓</i></div></fieldset><fieldset><legend>Optional Features</legend>' + FEATURES.map(function (f) { return '<label class="check"><input type="checkbox" name="feat" value="' + f[0] + '"' + (S.features[f[0]] ? ' checked' : '') + '>' + esc(f[1]) + '</label>'; }).join('') + '</fieldset><p>This demo preselects a sample cabin of ten fictional campers.</p>', '<button type="button" data-d="close">Cancel</button><button type="button" data-d="import">Import</button>');
+    } else if (d === 'view') {
+      h = dialogShell('View Settings', radio('placeholder', 'Empty Cell Placeholder', 'Use "No Data"', 'Use " - "', S.view.placeholder) + radio('contrast', 'Row Contrast', 'Enable Alternating Row Colors', 'Use Uniform Row Colors', S.view.contrast) + radio('highlight', 'Empty Cell Highlighting', 'Highlight Missing Data', "Don't Highlight Missing Data", S.view.highlight), '<button type="button" data-d="close">Cancel</button><button type="button" data-d="view">Apply</button>');
+    } else if (d === 'cols') {
+      h = dialogShell('Column Settings', '<fieldset><legend>Visibility Controls</legend><div class="inline"><button type="button" data-d="all">Show All</button><button type="button" data-d="none">Hide All</button><button type="button" data-d="std">Reset to Standard</button></div></fieldset><fieldset><legend>Column Visibility</legend><div class="columns">' + columnsAvailable().map(function (c) { return '<label class="check"><input type="checkbox" name="col" value="' + esc(c) + '"' + (S.visible[c] ? ' checked' : '') + '>' + esc(c) + '</label>'; }).join('') + '</div></fieldset>', '<button type="button" data-d="close">Cancel</button><button type="button" data-d="cols">Apply</button>', true);
+    } else if (d === 'export') {
+      h = dialogShell('Export Options', radio('allcols', 'Select Columns to Export', 'All Columns', 'Visible Columns Only', false) + radio('allrows', 'Select Rows to Export', 'All Rows', 'Visible Rows Only', false) + radio('ph', 'Empty Cell Representation', 'Use Placeholder: "No Data"', 'Leave Cells Empty', false), '<button type="button" data-d="close">Cancel</button><button type="button" data-d="export">Export</button>');
+    } else if (d === 'report') {
+      var heads = ['Activity', 'R1', 'R2', 'R3', 'Avg Rank (In)', 'Avg Rank (Out)'], rows = sortedReport();
+      h = dialogShell('Activity Report', '<p>Enrollment by round, plus the average preference rank among campers in each activity and those left out.</p><table class="report"><thead><tr>' + heads.map(function (t, i) { var s = S.reportSort && S.reportSort.i === i ? S.reportSort.dir : 0; return '<th scope="col"><button type="button" data-rs="' + i + '">' + t + (s > 0 ? ' ▲' : s < 0 ? ' ▼' : '') + '</button></th>'; }).join('') + '</tr></thead><tbody>' + rows.map(function (r, i) { return '<tr class="' + (i % 2 ? 'alt' : '') + '">' + r.map(function (c) { return '<td>' + esc(c) + '</td>'; }).join('') + '</tr>'; }).join('') + '</tbody></table>', '<button type="button" data-d="reportcsv">Export CSV</button><button type="button" data-d="close">Close</button>', true);
+    } else if (d === 'help') {
+      h = dialogShell('Welcome to HappyCamper', '<p><b>1. Select inputs.</b> Import a Camper Roster and an Activity Roster, each a CSV generated on Campminder.com.</p><p><b>2. View and sort.</b> Both rosters become one table. Filter in the sidebar, click a header to sort, and search from the top bar.</p><p><b>3. Export.</b> Save what you see, or everything, as a CSV.</p>', '<span></span><button type="button" data-d="close">Close</button>');
+    }
+    $('dialogRoot').innerHTML = h;
+    if (h) { var t = $('dialogRoot').querySelector('footer button:last-child'); if (t) t.focus({ preventScroll: true }); }
+  }
+  function sortedReport() {
+    var rows = reportRows(S.roster), s = S.reportSort;
+    if (s) rows.sort(function (a, b) {
+      var x = a[s.i], y = b[s.i];
+      if (s.i === 0) return x.localeCompare(y) * s.dir;
+      x = x === '—' ? -1 : +x; y = y === '—' ? -1 : +y; return (x - y) * s.dir;
+    });
+    return rows;
+  }
+  function render() {
+    var ready = !!S.roster;
+    ['tExport', 'tView', 'tCols', 'tReport', 'demand', 'search', 'scope'].forEach(function (id) { $(id).disabled = !ready; });
+    $('welcome').hidden = ready; $('welcome').style.display = ready ? 'none' : ''; $('workspace').hidden = !ready; $('workspace').style.display = ready ? '' : 'none';
+    if (ready) {
+      setOptions($('demand'), ['None'].concat(catalog(S.roster)), S.demand);
+      setOptions($('scope'), ['All Columns', 'All Names', 'Assigned Activities'].concat(visibleColumns()), S.scope);
+      renderSidebar(); renderTable();
+    } else { setOptions($('demand'), ['None'], 'None'); setOptions($('scope'), ['All Columns'], 'All Columns'); }
+    renderDialog();
+  }
+
+  function download(name, rows) {
+    var csv = rows.map(function (r) { return r.map(function (c) { return '"' + String(c == null ? '' : c).replace(/"/g, '""') + '"'; }).join(','); }).join('\r\n');
+    var a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv' })); a.download = name;
+    document.body.appendChild(a); a.click(); a.remove(); setTimeout(function () { URL.revokeObjectURL(a.href); }, 1000);
+  }
+  function radioValue(name) { return $('dialogRoot').querySelector('input[name=' + name + ']:checked').value === '1'; }
+  function openDialog(d) { S.opener = document.activeElement; S.dialog = d; renderDialog(); }
+  function closeDialog() { S.dialog = null; render(); if (S.opener && S.opener.focus && document.contains(S.opener)) S.opener.focus({ preventScroll: true }); }
+
+  $('tImport').onclick = function () { openDialog('import'); };
+  $('tExport').onclick = function () { openDialog('export'); };
+  $('tView').onclick = function () { openDialog('view'); };
+  $('tCols').onclick = function () { openDialog('cols'); };
+  $('tReport').onclick = function () { S.reportSort = null; openDialog('report'); };
+  $('tHelp').onclick = function () { openDialog('help'); };
+  $('reset').onclick = function () { resetDisplay(); render(); };
+  $('search').oninput = function () { S.search = this.value; renderTable(); };
+  $('scope').onchange = function () { S.scope = this.value; renderTable(); };
+  $('demand').onchange = function () { S.demand = this.value; if (S.demand !== 'None') S.sort = null; render(); };
+  $('app').addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && S.dialog) { closeDialog(); return; }
+    if (S.dialog && e.key === 'Tab') {
+      var items = $('dialogRoot').querySelectorAll('button:not(:disabled),input'), first = items[0], last = items[items.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+    var tr = e.target.closest && e.target.closest('tr[data-id]');
+    if (tr && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); toggleRow(tr.getAttribute('data-id')); }
+  });
+  function toggleRow(id) {
+    S.selected = S.selected === id ? null : id; renderTable();
+    var row = Array.prototype.find.call($('tablewrap').querySelectorAll('tr[data-id]'), function (r) { return r.getAttribute('data-id') === id; }); if (row) row.focus({ preventScroll: true });
+  }
+  $('tablewrap').addEventListener('click', function (e) {
+    var b = e.target.closest('[data-sort]');
+    if (b) {
+      var c = b.getAttribute('data-sort');
+      S.sort = S.sort && S.sort.col === c ? { col: c, dir: -S.sort.dir } : { col: c, dir: 1 };
+      S.demand = 'None'; render(); return;
+    }
+    var tr = e.target.closest('tr[data-id]'); if (tr) toggleRow(tr.getAttribute('data-id'));
+  });
+  $('sidebar').addEventListener('click', function (e) {
+    var b = e.target.closest('[data-panel]'); if (!b) return;
+    var id = b.getAttribute('data-panel'); S.collapsed[id] = !S.collapsed[id]; renderSidebar();
+  });
+  $('sidebar').addEventListener('change', function (e) {
+    var key = e.target.getAttribute('data-f'), on = e.target.checked, f = S.f; if (!key) return;
+    if (key === 'round') f.round = +e.target.value;
+    else {
+      var cut = key.indexOf(':'), kind = key.slice(0, cut), v = key.slice(cut + 1);
+      if (kind === 'prog') f.programs[v] = on;
+      else if (kind === 'group') { var g = programGroups(S.roster); Object.keys(g).forEach(function (p) { if (String(g[p]) === v) f.programs[p] = on; }); }
+      else if (kind === 'act') { if (on) f.acts[v] = true; else delete f.acts[v]; }
+      else f[kind][+v] = on;
+    }
+    render();
+  });
+  $('dialogRoot').addEventListener('click', function (e) {
+    var rs = e.target.closest('[data-rs]');
+    if (rs) { var i = +rs.getAttribute('data-rs'); S.reportSort = S.reportSort && S.reportSort.i === i ? { i: i, dir: -S.reportSort.dir } : { i: i, dir: 1 }; renderDialog(); return; }
+    var b = e.target.closest('[data-d]'); if (!b) return;
+    var act = b.getAttribute('data-d'), root = $('dialogRoot');
+    function boxes(fn) { root.querySelectorAll('input[name=col]').forEach(fn); }
+    if (act === 'close') closeDialog();
+    else if (act === 'import') {
+      FEATURES.forEach(function (f) { S.features[f[0]] = root.querySelector('input[value=' + f[0] + ']').checked; });
+      doImport(); render();
+    }
+    else if (act === 'view') { S.view = { placeholder: radioValue('placeholder'), contrast: radioValue('contrast'), highlight: radioValue('highlight') }; closeDialog(); }
+    else if (act === 'all') boxes(function (x) { x.checked = true; });
+    else if (act === 'none') boxes(function (x) { x.checked = false; });
+    else if (act === 'std') { var std = standardVisible(); boxes(function (x) { x.checked = !!std[x.value]; }); }
+    else if (act === 'cols') { S.visible = {}; boxes(function (x) { if (x.checked) S.visible[x.value] = true; }); if (S.scope !== 'All Columns' && S.scope !== 'All Names' && S.scope !== 'Assigned Activities' && !S.visible[S.scope]) S.scope = 'All Columns'; closeDialog(); }
+    else if (act === 'export') {
+      var cols = radioValue('allcols') ? columnsAvailable() : visibleColumns(), rows = radioValue('allrows') ? S.roster : viewRows(), ph = radioValue('ph');
+      download('happycamper-demo-export.csv', [cols].concat(rows.map(function (r) { return cols.map(function (c) { return isEmpty(r[c]) ? (ph ? NO_DATA : '') : r[c]; }); })));
+      closeDialog();
+    }
+    else if (act === 'reportcsv') download('happycamper-activity-report.csv', [['Activity', 'R1', 'R2', 'R3', 'Avg Rank (In)', 'Avg Rank (Out)']].concat(sortedReport()));
+  });
+
+  /* Filter examples. NOTE_MODE: a = one note per row, b = notes panel, c = notes under the table */
+  var NOTE_MODE = 'b';
+  window.__noteMode = NOTE_MODE;
+  var PROGRAM_ROWS = [{"name":"Staff Kids","group":0,"counts":{"0":1}},{"name":"Traditional Camp","group":-1,"counts":{"0":8,"1":4,"3":132}},{"name":"Traditional Camp, Session 2A","group":3,"counts":{"3":1}}];
+  var CHECKS = assertions(SAMPLE, allOn());
+  var NAME_COLS = ['Preferred Name', 'Last Name'];
+  var ROUND_COLS = NAME_COLS.concat(ROUNDS);
+  var SWIM_COLS = NAME_COLS.concat(['SwimColor'], ROUNDS);
+  var EXAMPLE_CAMPER = { 'Preferred Name': 'Example', 'Last Name': 'Camper', 'Round 1': 'Archery', 'Round 2': 'Sailing', 'Round 3': 'Archery', 'Duplicate Activities': 'Archery' };
+  function campers(lastNames) { return lastNames.map(function (n) { return SAMPLE.filter(function (c) { return c['Last Name'] === n; })[0]; }); }
+  function showing(n) { return 'Showing ' + n + ' of ' + SAMPLE.length + ' campers'; }
+  function group(label, tone, rows, note, rowNotes) { return { label: label, tone: tone, rows: rows, note: note, rowNotes: rowNotes }; }
+
+  function programExampleGroups() {
+    var cols = ['3 rounds', '2 rounds', '1 round', '0 rounds'], keys = { '3 rounds': '3', '2 rounds': '2', '1 round': '1', '0 rounds': '0' };
+    function toRow(p) {
+      var r = { Program: p.name, flags: {} }, total = 0, most = 0;
+      cols.forEach(function (c) { var n = p.counts[keys[c]] || 0; total += n; most = Math.max(most, n); });
+      r.Campers = String(total);
+      cols.forEach(function (c) { var n = p.counts[keys[c]] || 0; r[c] = n ? String(n) : EMPTY; if (p.group === -1 && n && n < most) r.flags[c] = true; });
+      return r;
+    }
+    return [
+      [-1, 'Mixed Rounds', 'bad', '132 campers have 3 rounds, but 12 have fewer. This roster was missing a cabin\'s assignments.', '12 campers have fewer rounds'],
+      [3, '3 Rounds', 'ok', 'Every camper in this program has the same number of rounds.', 'All campers match'],
+      [0, 'No Rounds', 'ok', 'Staff Kids are exempt from the activity system, so no rounds is expected.', 'Exempt from activities']
+    ].map(function (g) { return group(g[1], g[2], PROGRAM_ROWS.filter(function (p) { return p.group === g[0]; }).map(toRow), g[3], [g[4]]); });
+  }
+
+  var FILTERS = [
+    { name: 'Assignment Filter', columns: ROUND_COLS.concat(['Rounds Assigned']), status: showing(3),
+      groups: [
+        group('Campers with 2 activities', 'bad', campers(['Harrison']), 'Henry has nothing in Round 2, and the empty cell is highlighted.', ['Nothing in Round 2']),
+        group('Campers with 3 activities', 'ok', campers(['Adams', 'Evans']), 'Andy and Ethan each have an activity in all three rounds.', ['All three rounds filled', 'All three rounds filled'])
+      ] },
+    { name: 'Programs Filter', claim: CLAIMS.program, badge: CHECKS.program, columns: ['Program', 'Campers', '3 rounds', '2 rounds', '1 round', '0 rounds'], status: 'Showing 3 programs from a full-session demo roster',
+      groups: programExampleGroups() },
+    { name: 'Preference Filter', claim: CLAIMS.pref, badge: CHECKS.pref, columns: ROUND_COLS.concat(['Preference Score', 'Unrequested Activities']), status: showing(4),
+      groups: [
+        group('Assignments match requests', 'ok', campers(['Evans', 'Davis']), 'Ethan got choices 1, 4, and 5. Drew\'s Horseback Riding is assigned separately and isn\'t scored.', ['Got choices 1, 4, and 5', 'Horseback Riding isn\'t scored']),
+        group('Unrequested assignments', 'bad', campers(['Adams', 'Cooper']), 'Andy didn\'t request Arts & Crafts, and Charlie didn\'t request Drama or Sailing.', ['Didn\'t request Arts & Crafts', 'Didn\'t request Drama or Sailing'])
+      ] },
+    { name: 'Aquatic Conflicts', claim: CLAIMS.swim, badge: CHECKS.swim, columns: SWIM_COLS.concat(['Aquatic Conflicts']), status: showing(4),
+      groups: [
+        group('Valid swim level', 'ok', campers(['Davis', 'Garcia']), 'Skiing requires White or above, so Drew and Gabe both qualify.', ['Blue clears Skiing', 'White meets Skiing\'s level']),
+        group('Invalid swim level', 'bad', campers(['Ingram', 'Johnson']), 'Both are Red. Ike\'s three activities require White, and Gold Swimming requires Blue.', ['All three need White', 'Gold Swimming needs Blue'])
+      ] },
+    { name: 'Swim Lessons', claim: CLAIMS.lesson, badge: CHECKS.lesson, columns: SWIM_COLS.concat(['Swim Lessons']), status: showing(4),
+      groups: [
+        group('Swim lessons valid', 'ok', campers(['Davis', 'Garcia']), 'Blue and White swimmers aren\'t expected to take lessons.', ['No lessons expected', 'No lessons expected']),
+        group('Swim lessons mismatch', 'bad', campers(['Ingram', 'Johnson']), 'Red swimmers should have Swimming. Gold Swimming doesn\'t count as lessons.', ['Red, but no Swimming', 'Gold Swimming isn\'t lessons'])
+      ] },
+    { name: 'Duplicate Activities', claim: CLAIMS.dup, badge: 1, columns: ROUND_COLS.concat(['Duplicate Activities']), status: 'Showing 2 sample campers and 1 example',
+      groups: [
+        group('No duplicates', 'ok', campers(['Baker', 'Foster']), 'Bob and Frank each have three different activities.', ['Three different activities', 'Three different activities']),
+        group('Has duplicates', 'bad', [EXAMPLE_CAMPER], 'Archery appears twice. This camper is made up, because the sample has no duplicates.', ['Archery twice (made-up camper)'])
+      ] }
+  ];
+  var filterIndex = 0;
+
+  function exampleCell(r, col) {
+    var v = r[col], flag = r.flags ? !!r.flags[col] : PROBLEM.indexOf(col) >= 0 ? !isEmpty(v) : ROUNDS.indexOf(col) >= 0 && isEmpty(v);
+    return '<td' + (flag ? ' class="flag"' : '') + '>' + esc(isEmpty(v) ? EMPTY : v) + '</td>';
+  }
+  function rowLabel(r) { return r['Preferred Name'] || r.Program; }
+  function filterTable(f) {
+    var body = f.groups.map(function (g) {
+      return g.rows.map(function (r, i) {
+        return '<tr class="' + (i % 2 ? 'alt ' : '') + (i === 0 ? 'first' : '') + '" data-group="' + esc(g.label) + '">' + f.columns.map(function (c) { return exampleCell(r, c); }).join('') +
+          (NOTE_MODE === 'a' ? '<td class="notecell ' + g.tone + '">' + esc(g.rowNotes[i]) + '</td>' : '') + '</tr>';
+      }).join('');
+    }).join('');
+    return '<table class="roster mini"><thead><tr>' + f.columns.map(function (c) { return '<th scope="col">' + esc(c) + '</th>'; }).join('') + (NOTE_MODE === 'a' ? '<th scope="col" class="notehead">Notes</th>' : '') + '</tr></thead><tbody>' + body + '</tbody></table>';
+  }
+  function groupNotes(f, cls) { return '<ul class="' + cls + '">' + f.groups.map(function (g) { return '<li class="' + g.tone + '"><b>' + esc(g.label) + '</b> <span>' + esc(g.note) + '</span></li>'; }).join('') + '</ul>'; }
+  function rowNoteList(f) {
+    return '<ul class="rownotes">' + f.groups.map(function (g) { return g.rows.map(function (r, i) { return '<li class="' + g.tone + '"><b>' + esc(rowLabel(r)) + '</b> <span>' + esc(g.rowNotes[i]) + '</span></li>'; }).join(''); }).join('') + '</ul>';
+  }
+  function renderFilterPanel() {
+    var f = FILTERS[filterIndex];
+    var badge = f.badge === undefined ? '' : '<span class="badge ' + (f.badge ? 'bad' : 'ok') + '">' + (f.badge || '✓') + '</span>';
+    var main = '<div class="main"><div class="tablewrap">' + filterTable(f) + '</div>' + (NOTE_MODE === 'c' ? groupNotes(f, 'notefoot') : '') + '<div class="statusbar"><span>' + esc(f.status) + '</span></div></div>';
+    $('exampleCount').textContent = (filterIndex + 1) + ' of ' + FILTERS.length;
+    $('filterPanel').innerHTML = '<div class="app frame mode-' + NOTE_MODE + '"><div class="panel-head strip"><span class="name">' + esc(f.name) + '</span>' + (f.claim ? '<span class="stripclaim">' + esc(f.claim) + '</span>' : '') + badge + '</div>' +
+      (NOTE_MODE === 'b' ? '<div class="workspace"><div class="notepanel">' + groupNotes(f, 'panelnotes') + '</div>' + main + '</div>' : main) + '</div>' + (NOTE_MODE === 'a' ? rowNoteList(f) : '');
+  }
+  function showFilter(i) { filterIndex = (i + FILTERS.length) % FILTERS.length; renderFilterPanel(); }
+  $('prevExample').onclick = function () { showFilter(filterIndex - 1); };
+  $('nextExample').onclick = function () { showFilter(filterIndex + 1); };
+
+  window.HappyCamperDemo = { buildRoster: buildRoster, assertions: assertions, reportRows: reportRows, allOn: allOn, columns: COLUMNS };
+  doImport(); render(); renderFilterPanel();
+})();
+</script>
+</body>
+</html>
