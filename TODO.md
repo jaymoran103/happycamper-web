@@ -1,3 +1,4 @@
+- fix misleading directory name, this is a modest set of html demo pages, not to be confused with the long-planned web implementation. But at this point happycamper 2027 is looking like a robust html page that can be shared and run anywhere, with links to any external pages like your sheets viewer of choice, or track file paths in your browser cookies for easy resuming of sessions. Wrong place for this ramble but this keeps feeling like a winning direction and I want it in git now.
 - revise git history according to conventions.md, then formalize this winning structure
 - set remote to jaymoran103/happycamper-demo and push
 - write a runbook for deployment as a static site.
