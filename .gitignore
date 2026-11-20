@@ -1,0 +1,4 @@
+.DS_Store
+tools/demo-build/out/
+tools/demo-build/shots/
+*.class
