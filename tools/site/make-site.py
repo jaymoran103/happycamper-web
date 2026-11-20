@@ -25,7 +25,7 @@ SHARED_CSS = '''
   footer.sitefoot div + div { margin-top: .4rem; }
 '''
 FOOTER = '''  <footer class="sitefoot">
-    <div>Created by <a href="https://github.com/jaymoran103">Jay Moran</a></div>
+    <div>Created by <a href="https://github.com/jaymoran103">Jay Moran</a> &middot; Questions welcome: <a href="mailto:jaymorandev@gmail.com">jaymorandev@gmail.com</a></div>
     <div>
       <a href="https://github.com/jaymoran103/happycamper-heart">Source &amp; documentation</a> &middot;
       <a href="https://github.com/jaymoran103/happycamper-heart/releases">All releases</a>
