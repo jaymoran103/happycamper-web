@@ -59,6 +59,10 @@ def demo():
     h = sub(h, '</style>', SHARED_CSS + '  @media (max-width: 820px) { .page { padding-top: 0; } }\n</style>')
     h = sub(h, '<div class="page">\n', '<div class="page">\n' + nav('Demo'))
     h = sub(h, '<header class="top">', '<header class="top sitehead">')
+    # The headline introduces the overview, so it sits left-aligned above it.
+    h = sub(h, '    <p class="headline">Catch schedule problems before your campers do</p>\n  </header>', '  </header>')
+    h = sub(h, '    <div class="intro">\n', '    <div class="intro">\n      <h2 class="headline">Catch schedule problems before your campers do</h2>\n')
+    h = sub(h, '</style>', '  .intro .headline { margin: 0 0 .75rem; }\n</style>')
     h = sub(h, '      <a class="dl" href="https://jaymoran103.github.io/happycamper-heart/docs/">Downloads and sample rosters</a>\n', '')
     h = re.sub(r'  <footer>\n    <div>Created by.*?</footer>\n', FOOTER, h, count=1, flags=re.S)
     return h
