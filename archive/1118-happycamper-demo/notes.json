@@ -1,0 +1,109 @@
+{
+  "notes": [
+    {
+      "iteration": "A",
+      "by": "Jay",
+      "kind": "human",
+      "at": "2026-11-18T21:36:39.122Z",
+      "text": "This is a pretty good start, but you went well beyond what I was asking for"
+    },
+    {
+      "iteration": "B",
+      "by": "Jay",
+      "kind": "human",
+      "at": "2026-11-18T21:36:39.140Z",
+      "text": "Conversion definitely looks more human, but the paragraph dumped at the start is bad design."
+    },
+    {
+      "iteration": "B",
+      "by": "Jay",
+      "kind": "human",
+      "at": "2026-11-18T21:36:39.158Z",
+      "text": "i'm not liking the overuse of gradients and excessive shading."
+    },
+    {
+      "iteration": "C",
+      "by": "Jay",
+      "kind": "human",
+      "at": "2026-11-18T21:36:39.174Z",
+      "text": "B looks great. filters should start collapsed, and try a caret collapse indicator rather than the current +/-"
+    },
+    {
+      "iteration": "D",
+      "by": "Jay",
+      "kind": "human",
+      "at": "2026-11-18T21:36:39.190Z",
+      "text": "looks good, but centered text is awkward. align it left."
+    },
+    {
+      "iteration": "E",
+      "by": "Jay",
+      "kind": "human",
+      "at": "2026-11-18T21:36:39.206Z",
+      "text": "This is a good start, but the table-like information you're showing feels incomplete."
+    },
+    {
+      "iteration": "F",
+      "by": "Jay",
+      "kind": "human",
+      "at": "2026-11-18T21:36:39.222Z",
+      "text": "This is a good start, Now update it To show the 'annotations' As notes on the side, rather than confusing extra rows."
+    },
+    {
+      "iteration": "G",
+      "by": "Jay",
+      "kind": "human",
+      "at": "2026-11-18T21:36:39.240Z",
+      "text": "It's awkward to have inconsistent role size, we want these to be a single line whenever possible."
+    },
+    {
+      "iteration": "I",
+      "by": "Jay",
+      "kind": "human",
+      "at": "2026-11-18T21:36:39.257Z",
+      "text": "This is great, B is the clear winner."
+    },
+    {
+      "iteration": "L",
+      "by": "Jay",
+      "kind": "human",
+      "at": "2026-11-19T17:41:43.679Z",
+      "text": "This is good, I appreciate how simple youve kept it to start off."
+    },
+    {
+      "iteration": "L",
+      "by": "Jay",
+      "kind": "human",
+      "at": "2026-11-19T17:41:43.698Z",
+      "text": "Sports rank is dishonest and confusing."
+    },
+    {
+      "iteration": "M",
+      "by": "Jay",
+      "kind": "human",
+      "at": "2026-11-19T17:41:43.714Z",
+      "text": "I instructed you to order preferences the activity in an way that Demonstrates the progression of demand"
+    },
+    {
+      "iteration": "N",
+      "by": "Jay",
+      "kind": "human",
+      "at": "2026-11-19T17:41:43.729Z",
+      "text": "A is the win. make the change but keep it as v11. also remove 'help' as it offers nothing for the demo."
+    },
+    {
+      "iteration": "O",
+      "by": "Jay",
+      "kind": "human",
+      "at": "2026-11-19T17:41:43.746Z",
+      "text": "That split looks great."
+    },
+    {
+      "iteration": "O",
+      "by": "Jay",
+      "kind": "human",
+      "at": "2026-11-19T17:41:43.764Z",
+      "text": "Great work."
+    }
+  ]
+}

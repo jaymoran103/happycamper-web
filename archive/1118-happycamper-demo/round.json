@@ -1,0 +1,296 @@
+{
+  "round": "1118-happycamper-demo",
+  "title": "HappyCamper demo page",
+  "surface": "happycamper-demo.html",
+  "stylesheet": "shell.css",
+  "script": "shell.js",
+  "preview": true,
+  "settled": [
+    "The page uses Verdana on the distribution page green, with left-aligned text.",
+    "The intro is short, and one link points to the existing downloads page.",
+    "The app mock-up uses Lucida Grande and etched edges, with no gradients or blurred shadows.",
+    "Sidebar filters start collapsed and use caret indicators.",
+    "Filter examples use one-line camper rows with a notes panel beside them.",
+    "A compact previous, count, and next control switches examples.",
+    "Name, round, and short columns keep one width across examples.",
+    "A New since 2.3.0 section cycles one still frame per newer feature, each with one sentence.",
+    "Demo points are made through the rows chosen, using the app's real columns.",
+    "The main mock-up shows the app before 2.5, titled HappyCamper, without Help.",
+    "Column Visibility groups columns as Names, Core, Activities, Aquatic and Preferences, read top to bottom."
+  ],
+  "open": [
+    "Check the page in Safari and Firefox.",
+    "Choose where the finished page will be hosted.",
+    "Swim Lessons sits partly off the right edge of the sample roster at 1360px."
+  ],
+  "iterations": [
+    {
+      "id": "A",
+      "file": "prototypes/v1.html",
+      "name": "v1 Guided tour",
+      "tried": "A marketing-style page: slogan hero, guided tour, feature cards, score explainer, and a working app window.",
+      "verdict": "ruled_out",
+      "why": "It went well past the basic page that was asked for.",
+      "ruled_out": [
+        "a guided tour",
+        "hero and call-to-action sections",
+        "feature-card grids"
+      ],
+      "contributed": [
+        "the working roster window",
+        "the preference score breakdown"
+      ],
+      "followed_by": [
+        "B"
+      ]
+    },
+    {
+      "id": "B",
+      "file": "prototypes/v2.html",
+      "name": "v2 Plain page",
+      "tried": "Cut to an intro, the sample roster, and six filter breakdowns chosen with dropdowns. Verdana on green.",
+      "verdict": "superseded",
+      "why": "The direction held, but the intro was too long and the mock-up was over-shaded.",
+      "ruled_out": [
+        "the long opening paragraphs",
+        "gradients and soft shadows"
+      ],
+      "contributed": [
+        "Verdana on the distribution-page green",
+        "six filters as peers"
+      ],
+      "followed_by": [
+        "C"
+      ]
+    },
+    {
+      "id": "C",
+      "file": "prototypes/ui-drafts.html",
+      "name": "UI drafts",
+      "tried": "A comparison sheet of four edge treatments beside a real render of the Java app: hard bevel, etched frame, solid ledge, flat ruled.",
+      "verdict": "superseded",
+      "why": "Draft B, the etched frame, was chosen.",
+      "contributed": [
+        "the etched frame style"
+      ],
+      "followed_by": [
+        "D"
+      ]
+    },
+    {
+      "id": "D",
+      "file": "prototypes/v3.html",
+      "name": "v3 Etched UI",
+      "tried": "Applied the etched frame and the new intro. Filters start collapsed with caret indicators.",
+      "verdict": "superseded",
+      "why": "The styling held. The centered intro did not.",
+      "ruled_out": [
+        "centered intro text"
+      ],
+      "contributed": [
+        "etched app styling",
+        "collapsed filters with carets"
+      ],
+      "followed_by": [
+        "E"
+      ]
+    },
+    {
+      "id": "E",
+      "file": "prototypes/v4.html",
+      "name": "v4 Pass/fail",
+      "tried": "Left-aligned intro. Each filter shows a passing card beside a failing card, with no pickers.",
+      "verdict": "superseded",
+      "why": "Curated cases worked, but the lists had no headers.",
+      "ruled_out": [
+        "dropdown pickers",
+        "header-less example lists"
+      ],
+      "contributed": [
+        "curated pass and fail cases"
+      ],
+      "followed_by": [
+        "F"
+      ]
+    },
+    {
+      "id": "F",
+      "file": "prototypes/v5.html",
+      "name": "v5 Grouped",
+      "tried": "Examples became small app-style tables, with rows grouped under filter-option bands.",
+      "verdict": "superseded",
+      "why": "The table format worked, but the bands read as confusing extra rows.",
+      "ruled_out": [
+        "group bands inside the table"
+      ],
+      "contributed": [
+        "camper rows with headed columns"
+      ],
+      "followed_by": [
+        "G"
+      ]
+    },
+    {
+      "id": "G",
+      "file": "prototypes/v6.html",
+      "name": "v6 Side notes",
+      "tried": "A Notes column spans each group of rows, with worded previous and next controls and numbered pages.",
+      "verdict": "superseded",
+      "why": "Notes added the value, but they stretched rows and the controls were wordy.",
+      "ruled_out": [
+        "notes that change row height",
+        "worded and numbered example controls"
+      ],
+      "contributed": [
+        "concise case notes",
+        "controls that read as switching examples"
+      ],
+      "followed_by": [
+        "H",
+        "I",
+        "J"
+      ]
+    },
+    {
+      "id": "H",
+      "file": "prototypes/v7a.html",
+      "name": "v7a Row notes",
+      "tried": "One short note per camper in a column beside the table.",
+      "verdict": "parked",
+      "why": "Keeps the tightest link to each row, but was not chosen.",
+      "contributed": [],
+      "followed_by": []
+    },
+    {
+      "id": "I",
+      "file": "prototypes/v7b.html",
+      "name": "v7b Panel",
+      "tried": "Notes sit in a panel left of the table, and rows stay on one line.",
+      "verdict": "superseded",
+      "why": "Chosen from the three drafts and carried into v8.",
+      "contributed": [
+        "the notes panel",
+        "the compact example header"
+      ],
+      "followed_by": [
+        "K"
+      ]
+    },
+    {
+      "id": "J",
+      "file": "prototypes/v7c.html",
+      "name": "v7c Footer",
+      "tried": "One note line per filter option under the table.",
+      "verdict": "parked",
+      "why": "The most compact option, but was not chosen.",
+      "contributed": [],
+      "followed_by": []
+    },
+    {
+      "id": "K",
+      "file": "prototypes/v8.html",
+      "name": "v8 Final",
+      "tried": "The notes panel with camper rows for Programs, consistent column widths, a fitted frame, and no example status lines.",
+      "verdict": "superseded",
+      "why": "Carried into v9 as the base for the new-features section.",
+      "contributed": [
+        "the notes panel layout",
+        "consistent column widths"
+      ],
+      "followed_by": [
+        "L"
+      ],
+      "revisions": [
+        {
+          "ask": "now update v8 to show an 'overqualified' swimmer - a blue level swimmer in swim lessons is flagged as an error",
+          "changed": "Swim Lessons now includes Theo, a Blue swimmer assigned Swimming and flagged as Assigned lessons."
+        }
+      ]
+    },
+    {
+      "id": "L",
+      "file": "prototypes/v9.html",
+      "name": "v9 New views",
+      "tried": "Added a \"New since 2.3.0\" section that cycles one still frame from each newer feature.",
+      "verdict": "superseded",
+      "why": "The simple frames held, but they needed explanations and an honest demand frame.",
+      "ruled_out": [
+        "an invented rank column"
+      ],
+      "contributed": [
+        "the New since 2.3.0 section"
+      ],
+      "followed_by": [
+        "M"
+      ]
+    },
+    {
+      "id": "M",
+      "file": "prototypes/v10.html",
+      "name": "v10 Explained views",
+      "tried": "Each view got a one-line explanation. Sort by demand uses demo campers who ranked Climbing from first to not at all.",
+      "verdict": "superseded",
+      "why": "Settled the new-features section.",
+      "ruled_out": [
+        "highlighting selected cells",
+        "preferences split into made-up sub-columns"
+      ],
+      "contributed": [
+        "demand shown through the rows chosen"
+      ],
+      "followed_by": [
+        "N"
+      ],
+      "revisions": [
+        {
+          "ask": "fix 10. The selections are innacurate and ugly, swim column preset doesnt even show the important swim fields.",
+          "changed": "Removed cell highlights, showed the swim fields in the preset view, and switched the demand activity to Climbing."
+        },
+        {
+          "ask": "I instructed you to order preferences the activity in an way that Demonstrates the progression of demand",
+          "changed": "Replaced the rows with five demo campers ranking Climbing 1st, 2nd, 3rd, 6th and not at all, in the real Activity Preferences column."
+        }
+      ]
+    },
+    {
+      "id": "N",
+      "file": "prototypes/v11.html",
+      "name": "v11 Older mock-up",
+      "tried": "Trimmed the main window to controls from before 2.5, titled it HappyCamper, and removed Help.",
+      "verdict": "superseded",
+      "why": "Kept as the mock-up base for v12.",
+      "ruled_out": [
+        "a version number in the window title",
+        "the Help button"
+      ],
+      "contributed": [
+        "the trimmed toolbar"
+      ],
+      "followed_by": [
+        "O"
+      ],
+      "revisions": [
+        {
+          "ask": "A is the win. make the change but keep it as v11. also remove 'help' as it offers nothing for the demo.",
+          "changed": "Window title became HappyCamper and the Help button was removed."
+        }
+      ]
+    },
+    {
+      "id": "O",
+      "file": "prototypes/v12.html",
+      "name": "v12 Final",
+      "tried": "Grouped Column Visibility dialog, new default columns, matched column widths, an overqualified swimmer, and a short description.",
+      "verdict": "confirmed",
+      "why": "The page shared with the audience.",
+      "contributed": [],
+      "followed_by": [],
+      "revisions": [
+        {
+          "ask": "amend v12 - update ike ingram's activity assignments to be Swimming, Sailing, Sports.",
+          "changed": "Ike now has one aquatic conflict, Sailing, and passes the Swim Lessons check."
+        }
+      ]
+    }
+  ]
+}
