@@ -1,3 +1,4 @@
 - revise git history according to conventions.md, then formalize this winning structure
 - set remote to jaymoran103/happycamper-demo and push
 - write a runbook for deployment as a static site.
+- implement the page trio outlined in `1120-happycamper-html-demo.md`
