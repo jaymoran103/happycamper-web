@@ -1,0 +1,3 @@
+- revise git history according to conventions.md, then formalize this winning structure
+- set remote to jaymoran103/happycamper-demo and push
+- write a runbook for deployment as a static site.
