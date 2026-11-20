@@ -1,0 +1,558 @@
+/* ═══ THE ITERATION SHELL ════════════════════════════════════════════════
+   The reusable half of a prototyping round: the app's design tokens, the
+   standard header, the generated nav strip, the lineage drawing and the
+   contrast sheet. Nothing here is specific to one surface.
+
+   ── SWAP THE TOKENS, KEEP EVERYTHING ELSE ───────────────────────────────
+   The `:root` and `.dark` blocks below are permit-desk's "Daybreak" set,
+   copied from its `src/app/globals.css`. Replace them with your app's own
+   and the whole shell recolours. They are HSL TRIPLES, used as
+   `hsl(var(--token))`, so alphas compose.
+
+   Do not invent a colour in a prototype. If a prototype needs one, the app
+   needs a token first — that is the point of prototyping against the real
+   set rather than against a mock.
+
+   ── ONE RULE THIS FILE ENFORCES BY OMISSION ─────────────────────────────
+   There is no utility here for a fill on an input, and no success green on
+   a fact that is not a verdict. A prototype that wants either is proposing
+   a rule change, and should say so out loud.
+
+   Per-surface components — panes, field rows, check cards — go in the
+   round's own stylesheet beside this one, never in here.
+   ════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  color-scheme: light;
+
+  --background: 40 30% 98%;
+  --foreground: 235 18% 14%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 235 18% 14%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 235 18% 14%;
+
+  --secondary: 42 22% 94%;
+  --secondary-foreground: 235 18% 14%;
+
+  --muted: 42 22% 94%;
+  --muted-foreground: 235 11% 38%;
+  --faint-foreground: 235 9% 46%;
+
+  --accent: 42 25% 92%;
+  --accent-foreground: 235 18% 14%;
+
+  --destructive: 0 68% 42%;
+  --destructive-fill: 0 68% 42%;
+  --destructive-foreground: 0 0% 100%;
+
+  --success: 152 55% 30%;
+  --warning: 30 85% 32%;
+
+  --border: 235 14% 86%;
+  --input: 235 18% 96%;
+  --control-border: 235 12% 52%;
+
+  --overlay: 240 20% 4%;
+
+  --provenance-rule: 215 25% 38%;
+  --provenance-ai: 262 55% 44%;
+  --provenance-human: 152 55% 30%;
+  --provenance-engine: 190 65% 28%;
+
+  --status-staged: 235 11% 38%;
+  --status-pending: 30 85% 32%;
+  --status-confirmed: 152 55% 30%;
+  --status-rejected: 0 68% 42%;
+  --status-sent: 213 75% 38%;
+
+  --channel-email: 213 75% 38%;
+  --channel-portal: 175 75% 26%;
+  --channel-other: 220 10% 40%;
+
+  --radius: 0.5rem;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+
+  --text-2xs: 0.6875rem;
+
+  --font-display: Gabarito, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-body: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --header-h: 3.5rem;
+  --pane-gap: 0.75rem;
+  --shell-x: 1.25rem;
+}
+
+.dark {
+  color-scheme: dark;
+
+  --background: 237 10% 9%;
+  --foreground: 40 18% 93%;
+
+  --card: 237 10% 13%;
+  --card-foreground: 40 18% 93%;
+
+  --popover: 237 11% 10%;
+  --popover-foreground: 40 18% 93%;
+
+  --secondary: 237 10% 13%;
+  --secondary-foreground: 40 18% 93%;
+
+  --muted: 237 9% 12%;
+  --muted-foreground: 233 12% 72%;
+  --faint-foreground: 233 10% 60%;
+
+  --accent: 237 10% 16%;
+  --accent-foreground: 40 18% 93%;
+
+  --destructive: 0 84% 68%;
+  --destructive-fill: 0 72% 50%;
+  --destructive-foreground: 0 0% 100%;
+
+  --success: 152 55% 55%;
+  --warning: 38 92% 60%;
+
+  --border: 236 10% 22%;
+  --input: 237 9% 12%;
+  --control-border: 235 10% 55%;
+
+  --overlay: 240 20% 4%;
+
+  --provenance-rule: 215 20% 72%;
+  --provenance-ai: 262 80% 74%;
+  --provenance-human: 152 55% 55%;
+  --provenance-engine: 188 60% 66%;
+
+  --status-staged: 233 12% 72%;
+  --status-pending: 38 92% 60%;
+  --status-confirmed: 152 55% 55%;
+  --status-rejected: 0 84% 68%;
+  --status-sent: 216 100% 69%;
+
+  --channel-email: 216 100% 69%;
+  --channel-portal: 171 65% 60%;
+  --channel-other: 220 10% 65%;
+}
+
+/* Per-app accent. Recolors IDENTITY tokens only; status and provenance stay
+   universal across ESPO apps. permit-desk ships teal. */
+:root:not([data-accent]), [data-accent="teal"]   { --primary: 173 80% 28%; --ring: 173 80% 28%; --primary-foreground: 0 0% 100%; }
+[data-accent="violet"] { --primary: 262 83% 58%; --ring: 262 83% 58%; --primary-foreground: 0 0% 100%; }
+[data-accent="blue"]   { --primary: 217 91% 60%; --ring: 217 91% 60%; --primary-foreground: 235 18% 14%; }
+[data-accent="amber"]  { --primary: 32 95% 44%;  --ring: 32 95% 44%;  --primary-foreground: 235 18% 14%; }
+[data-accent="rose"]   { --primary: 347 77% 50%; --ring: 347 77% 50%; --primary-foreground: 0 0% 100%; }
+[data-accent="slate"]  { --primary: 215 16% 47%; --ring: 215 16% 47%; --primary-foreground: 0 0% 100%; }
+
+.dark:not([data-accent]), .dark[data-accent="teal"] { --primary: 172 66% 56%; --ring: 172 66% 56%; --primary-foreground: 237 10% 9%; }
+.dark[data-accent="violet"] { --primary: 262 84% 74%;  --ring: 262 84% 74%;  --primary-foreground: 237 10% 9%; }
+.dark[data-accent="blue"]   { --primary: 216 100% 69%; --ring: 216 100% 69%; --primary-foreground: 237 10% 9%; }
+.dark[data-accent="amber"]  { --primary: 38 92% 58%;   --ring: 38 92% 58%;   --primary-foreground: 237 10% 9%; }
+.dark[data-accent="rose"]   { --primary: 350 89% 70%;  --ring: 350 89% 70%;  --primary-foreground: 237 10% 9%; }
+.dark[data-accent="slate"]  { --primary: 215 16% 72%;  --ring: 215 16% 72%;  --primary-foreground: 237 10% 9%; }
+
+/* ── base ──────────────────────────────────────────────────────────────── */
+
+* { box-sizing: border-box; border-color: hsl(var(--border)); }
+
+html { -webkit-text-size-adjust: 100%; }
+
+/* "Text size: large" — one root bump scales every rem measurement. Driven by
+   the Appearance menu, exactly as the app drives it. */
+html.text-scale-lg { font-size: 17.5px; }
+
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  line-height: 1.45;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3 { margin: 0; font-weight: 600; letter-spacing: -0.01em; }
+.font-display { font-family: var(--font-display); }
+
+a { color: inherit; }
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: hsl(var(--border)); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: hsl(var(--control-border)); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ── the standard ESPO app header ──────────────────────────────────────── */
+/* Ported from permit-desk src/app/components/header.tsx: sticky, h-14, the
+   wordmark links home, the four nav destinations, then Appearance and the
+   avatar menu. Appearance is offered whether or not there is a session. */
+
+.espo-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: flex;
+  height: var(--header-h);
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  border-bottom: 1px solid hsl(var(--border));
+  background: hsl(var(--popover) / 0.7);
+  backdrop-filter: blur(8px);
+  padding: 0 var(--shell-x);
+}
+.espo-header .left { display: flex; min-width: 0; align-items: center; gap: 1.5rem; }
+.espo-header .wordmark {
+  font-family: var(--font-display);
+  flex-shrink: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  color: hsl(var(--foreground));
+}
+.espo-header nav { display: flex; gap: 0.25rem; }
+.espo-header nav a {
+  font-size: 0.8125rem;
+  text-decoration: none;
+  color: hsl(var(--muted-foreground));
+  padding: 0.3rem 0.55rem;
+  border-radius: var(--radius-md);
+}
+.espo-header nav a:hover { background: hsl(var(--accent)); color: hsl(var(--foreground)); }
+.espo-header nav a[aria-current] { color: hsl(var(--foreground)); font-weight: 600; background: hsl(var(--accent)); }
+.espo-header .right { display: flex; flex-shrink: 0; align-items: center; gap: 0.5rem; }
+
+.iconbtn {
+  display: inline-flex;
+  width: 2.25rem;
+  height: 2.25rem;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: hsl(var(--muted-foreground));
+  cursor: pointer;
+}
+.iconbtn:hover { background: hsl(var(--accent)); color: hsl(var(--foreground)); }
+.iconbtn svg { width: 1rem; height: 1rem; }
+
+.avatar {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  border: 0;
+  background: hsl(var(--muted));
+  color: hsl(var(--foreground));
+  font: inherit;
+  font-size: var(--text-2xs);
+  font-weight: 600;
+  cursor: pointer;
+}
+.avatar:hover { opacity: 0.8; }
+
+/* Menus: popover surface, same as the app's DropdownMenuContent. */
+.menuwrap { position: relative; }
+.menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 0.35rem);
+  min-width: 11rem;
+  background: hsl(var(--popover));
+  color: hsl(var(--popover-foreground));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius-lg);
+  box-shadow: 0 10px 30px hsl(var(--overlay) / 0.35);
+  padding: 0.25rem;
+  display: none;
+  z-index: 50;
+}
+.menu[data-open] { display: block; }
+.menu .mi {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 0.5rem;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 0.8125rem;
+  text-align: left;
+  padding: 0.35rem 0.5rem;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+}
+.menu .mi:hover { background: hsl(var(--accent)); }
+.menu .mi[aria-checked="true"] { background: hsl(var(--accent)); font-weight: 600; }
+.menu .mi svg { width: 1rem; height: 1rem; }
+.menu .sep { height: 1px; background: hsl(var(--border)); margin: 0.25rem 0; }
+.menu .mlabel { padding: 0.4rem 0.5rem; display: grid; gap: 0.1rem; }
+.menu .mlabel .n { font-size: 0.8125rem; font-weight: 600; }
+.menu .mlabel .e { font-size: var(--text-2xs); color: hsl(var(--muted-foreground)); }
+.menu .mhead { padding: 0.35rem 0.5rem 0.15rem; font-size: var(--text-2xs); color: hsl(var(--faint-foreground)); }
+.swatches { display: flex; gap: 0.3rem; padding: 0.15rem 0.5rem 0.4rem; }
+.swatches button {
+  width: 1.1rem;
+  height: 1.1rem;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  padding: 0;
+}
+.swatches button[aria-checked="true"] { border-color: hsl(var(--foreground)); }
+
+.badge {
+  display: inline-block;
+  width: fit-content;
+  background: hsl(var(--secondary));
+  color: hsl(var(--secondary-foreground));
+  border-radius: var(--radius-sm);
+  font-size: var(--text-2xs);
+  padding: 0.05rem 0.35rem;
+  margin-top: 0.3rem;
+}
+
+/* ── the prototype banner (not app chrome) ─────────────────────────────── */
+
+.proto-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 0.6rem;
+  padding: 0.35rem var(--shell-x);
+  background: hsl(var(--overlay));
+  color: hsl(40 18% 93%);
+  font-size: var(--text-2xs);
+}
+.proto-bar b { font-weight: 600; }
+.proto-bar > span { color: hsl(233 10% 68%); }
+.proto-bar nav { margin-left: auto; display: flex; gap: 0.6rem; }
+.proto-bar nav a { color: hsl(233 12% 82%); text-decoration: none; border-bottom: 1px solid hsl(236 10% 32%); }
+.proto-bar nav a[aria-current] { color: hsl(40 18% 96%); border-bottom-color: currentColor; }
+
+/* ── the record hat ────────────────────────────────────────────────────── */
+
+.hat {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem 0.75rem;
+  padding: 0.5rem var(--shell-x);
+  background: hsl(var(--card));
+  border-bottom: 1px solid hsl(var(--border));
+}
+.hat .back { color: hsl(var(--muted-foreground)); text-decoration: none; font-size: 0.75rem; }
+.hat h1 { font-family: var(--font-display); font-size: 0.9375rem; min-width: 0; }
+.hat .meta { color: hsl(var(--muted-foreground)); font-size: 0.75rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.hat .purpose { color: hsl(var(--muted-foreground)); font-size: 0.75rem; flex-basis: 100%; margin: 0; }
+.hat .nav { margin-left: auto; display: flex; gap: 0.35rem; }
+
+/* ── generic surfaces ──────────────────────────────────────────────────── */
+
+.card {
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius-lg);
+  min-width: 0;
+}
+.card > header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.625rem;
+  border-bottom: 1px solid hsl(var(--border));
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.card > header .hint { font-weight: 400; color: hsl(var(--faint-foreground)); font-size: var(--text-2xs); }
+
+.pill {
+  display: inline-block;
+  border: 1px solid hsl(var(--border));
+  border-radius: 999px;
+  padding: 0 0.375rem;
+  font-size: var(--text-2xs);
+  line-height: 1.05rem;
+  color: hsl(var(--muted-foreground));
+  white-space: nowrap;
+}
+/* Chip pattern from kit/chip.tsx: token ink on a 12% fill of itself, 35%
+   border. Both arms are AA-verified at these alphas. */
+.pill.ai     { color: hsl(var(--provenance-ai));    background: hsl(var(--provenance-ai) / 0.12);    border-color: hsl(var(--provenance-ai) / 0.35); }
+.pill.human  { color: hsl(var(--provenance-human)); background: hsl(var(--provenance-human) / 0.12); border-color: hsl(var(--provenance-human) / 0.35); }
+.pill.rule   { color: hsl(var(--provenance-rule));  background: hsl(var(--provenance-rule) / 0.12);  border-color: hsl(var(--provenance-rule) / 0.35); }
+.pill.engine { color: hsl(var(--provenance-engine));background: hsl(var(--provenance-engine) / 0.12);border-color: hsl(var(--provenance-engine) / 0.35); }
+.pill.stop   { color: hsl(var(--destructive));      background: hsl(var(--destructive) / 0.12);      border-color: hsl(var(--destructive) / 0.35); }
+.pill.risk   { color: hsl(var(--warning));          background: hsl(var(--warning) / 0.12);          border-color: hsl(var(--warning) / 0.35); }
+.pill.ok     { color: hsl(var(--success));          background: hsl(var(--success) / 0.12);          border-color: hsl(var(--success) / 0.35); }
+.pill.staged { color: hsl(var(--status-staged));    background: hsl(var(--status-staged) / 0.12);    border-color: hsl(var(--status-staged) / 0.35); }
+.pill.key    { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+
+.btn {
+  font: inherit;
+  font-size: 0.75rem;
+  border: 1px solid hsl(var(--control-border));
+  background: hsl(var(--card));
+  color: hsl(var(--foreground));
+  border-radius: var(--radius-md);
+  padding: 0.25rem 0.55rem;
+  cursor: default;
+  white-space: nowrap;
+  transition: background-color 150ms, color 150ms, box-shadow 120ms, transform 120ms;
+}
+.btn:hover { background: hsl(var(--accent)); }
+.btn.primary {
+  background: hsl(var(--primary));
+  border-color: transparent;
+  color: hsl(var(--primary-foreground));
+  font-weight: 600;
+}
+.btn.primary:hover { background: hsl(var(--primary)); box-shadow: 0 2px 8px hsl(var(--overlay) / 0.3); }
+.btn.danger { color: hsl(var(--destructive)); border-color: hsl(var(--destructive) / 0.45); }
+.btn.ghost { border-color: transparent; color: hsl(var(--muted-foreground)); }
+.btn.small { font-size: var(--text-2xs); padding: 0.1rem 0.45rem; }
+
+.seg {
+  display: inline-flex;
+  gap: 0.125rem;
+  padding: 0.125rem;
+  background: hsl(var(--muted));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius-md);
+}
+.seg a {
+  text-decoration: none;
+  font-size: 0.75rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-sm);
+  color: hsl(var(--muted-foreground));
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.seg a[aria-current] {
+  background: hsl(var(--card));
+  color: hsl(var(--foreground));
+  font-weight: 600;
+  box-shadow: 0 1px 2px hsl(var(--overlay) / 0.2);
+}
+.seg a .count { font-size: var(--text-2xs); color: hsl(var(--faint-foreground)); }
+
+.note { color: hsl(var(--muted-foreground)); font-size: var(--text-2xs); }
+.empty { color: hsl(var(--faint-foreground)); font-size: 0.75rem; font-style: italic; }
+.act { color: hsl(var(--primary)); text-decoration: underline; text-underline-offset: 3px; }
+
+/* ── contrast sheet ────────────────────────────────────────────────────── */
+
+.wrap { max-width: 54rem; margin: 0 auto; padding: 1.5rem var(--shell-x) 3.5rem; }
+.wrap h1 { font-family: var(--font-display); font-size: 1.375rem; margin-bottom: 0.25rem; }
+.wrap h2 { font-size: 0.875rem; margin: 1.6rem 0 0.5rem; }
+.wrap p, .wrap ul { color: hsl(var(--muted-foreground)); }
+.wrap ul { padding-left: 1.1rem; }
+.wrap code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.75rem; }
+.varlist { display: grid; gap: 0.75rem; margin-top: 0.75rem; }
+.varcard { border: 1px solid hsl(var(--border)); background: hsl(var(--card)); border-radius: var(--radius-lg); padding: 0.75rem 0.875rem; }
+.varcard h3 { font-family: var(--font-display); font-size: 0.875rem; margin-bottom: 0.15rem; }
+.varcard h3 a { text-decoration: none; }
+.varcard h3 a:hover { text-decoration: underline; }
+.varcard .tag { font-size: var(--text-2xs); color: hsl(var(--faint-foreground)); margin: 0; }
+.varcard dl { display: grid; grid-template-columns: 5.25rem 1fr; gap: 0.15rem 0.625rem; margin: 0.5rem 0 0; font-size: 0.78125rem; }
+.varcard dt { color: hsl(var(--faint-foreground)); }
+.varcard dd { margin: 0; color: hsl(var(--muted-foreground)); }
+.ascii {
+  font: var(--text-2xs)/1.3 ui-monospace, SFMono-Regular, Menlo, monospace;
+  color: hsl(var(--muted-foreground));
+  background: hsl(var(--background));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius-md);
+  padding: 0.5rem 0.625rem;
+  overflow-x: auto;
+  white-space: pre;
+  margin-top: 0.625rem;
+}
+.tokenrow { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.5rem; }
+
+/* Accent swatches in the user menu. Cosmetic: each shows the arm that is
+   actually in force for the current theme. */
+.sw-teal   { background: hsl(173 80% 28%); }
+.sw-violet { background: hsl(262 83% 58%); }
+.sw-blue   { background: hsl(217 91% 60%); }
+.sw-amber  { background: hsl(32 95% 44%); }
+.sw-rose   { background: hsl(347 77% 50%); }
+.sw-slate  { background: hsl(215 16% 47%); }
+.dark .sw-teal   { background: hsl(172 66% 56%); }
+.dark .sw-violet { background: hsl(262 84% 74%); }
+.dark .sw-blue   { background: hsl(216 100% 69%); }
+.dark .sw-amber  { background: hsl(38 92% 58%); }
+.dark .sw-rose   { background: hsl(350 89% 70%); }
+.dark .sw-slate  { background: hsl(215 16% 72%); }
+
+   inside any prototype without going back to the index. */
+.proto-bar nav a.nav-ok     { color: hsl(152 55% 70%); border-bottom-color: hsl(152 55% 40%); }
+.proto-bar nav a.nav-warn   { color: hsl(38 92% 70%);  border-bottom-color: hsl(38 92% 42%); }
+.proto-bar nav a.nav-bad    { color: hsl(0 84% 76%);   border-bottom-color: hsl(0 60% 42%); }
+.proto-bar nav a.nav-muted  { color: hsl(233 10% 62%); border-bottom-color: hsl(236 10% 32%); }
+.proto-bar nav a[aria-current] { color: hsl(40 18% 96%); border-bottom-color: currentColor; }
+
+/* The lineage drawing. Scrolls sideways rather than shrinking: a squashed
+   graph is a picture of nothing. */
+.lineage {
+  margin-top: 0.625rem;
+  padding: 0.25rem 0;
+  overflow-x: auto;
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius-lg);
+  background: hsl(var(--card));
+}
+.lineage svg { display: block; max-width: none; }
+
+.lin-node rect { fill: hsl(var(--background)); stroke: hsl(var(--border)); stroke-width: 1; }
+.lin-node:hover rect { stroke: hsl(var(--control-border)); }
+.lin-node .lin-id { font: 600 0.75rem var(--font-display); fill: hsl(var(--foreground)); }
+.lin-node .lin-verdict { font: 400 var(--text-2xs) var(--font-body); fill: hsl(var(--muted-foreground)); }
+
+/* Verdict as the node's own edge, so the graph reads at a glance and still
+   reads without colour: the label under the name says the same thing. */
+.lin-ok rect    { stroke: hsl(var(--success)); stroke-width: 2; }
+.lin-ok .lin-verdict    { fill: hsl(var(--success)); }
+.lin-warn rect  { stroke: hsl(var(--warning)); }
+.lin-warn .lin-verdict  { fill: hsl(var(--warning)); }
+.lin-bad rect   { stroke: hsl(var(--destructive) / 0.5); }
+.lin-bad .lin-verdict   { fill: hsl(var(--destructive)); }
+.lin-muted rect { stroke-dasharray: 3 3; }
+
+/* A card's own verdict line, and its relations. */
+.varcard .why { margin: 0.35rem 0 0; font-size: 0.78125rem; color: hsl(var(--foreground)); }
+.varcard .rels { margin: 0.4rem 0 0; display: flex; flex-wrap: wrap; gap: 0.25rem 0.5rem; }
+.varcard .rel {
+  font-size: var(--text-2xs);
+  color: hsl(var(--muted-foreground));
+  border: 1px solid hsl(var(--border));
+  border-radius: 999px;
+  padding: 0.05rem 0.45rem;
+}
+.varcard .rel.ok  { color: hsl(var(--success));     border-color: hsl(var(--success) / 0.35); }
+.varcard .rel.bad { color: hsl(var(--destructive)); border-color: hsl(var(--destructive) / 0.35); }
+.pill.warn  { color: hsl(var(--warning));  background: hsl(var(--warning) / 0.12);  border-color: hsl(var(--warning) / 0.35); }
+.pill.bad   { color: hsl(var(--destructive)); background: hsl(var(--destructive) / 0.12); border-color: hsl(var(--destructive) / 0.35); }
+.pill.muted { color: hsl(var(--muted-foreground)); background: transparent; border-style: dashed; }
+
+/* This round has a long chain, so the page widens and the drawing fits it. */
+.wrap { max-width: min(1760px, 96vw); }
+.lineage svg { width: 100%; min-width: 1100px; max-width: 1720px; height: auto; }
